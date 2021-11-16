@@ -1,0 +1,12 @@
+<!--components/nodata/no-data.wxml-->
+<view class="container">
+    <view class="img-container">
+        <image src="../../images/icon_nodata.png" class="img-style"></image>
+    </view>
+    <view class="text-container">
+        <text class="text-style">抱歉，您还没有打卡记录哦～</text>
+    </view>
+    <view class="button-container">
+        <view class="button-style" bindtap="goClock">{{title}}</view>
+    </view>
+</view>

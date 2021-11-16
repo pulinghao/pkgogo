@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "user-info-view": "/components/userinfoview/user-info-view",
+        "game-pk-item":"/components/gamepkitem/gamepkitem",
+        "reward-toast":"/components/rewardtoast/reward-toast",
+        "pk-header-card-item":"/components/pkheadercarditem/pk-header-card-item"
+    }
+}

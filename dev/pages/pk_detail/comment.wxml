@@ -1,0 +1,13 @@
+<!-- 用户评论页面 -->
+<view class='title-container'>
+  <text class="title">
+    {{pkTitle}}
+  </text>
+</view>
+<view class='textarea'>
+  <textarea class='row-textarea' placeholder='填写您的评论，所有人都能看得到喔～' name='textarea' maxlength='-1' value='{{content}}' bindinput="bindInput" />
+</view>
+
+<view class='comment' bindtap='onClickSend'>
+  <text class='fasong'>发送</text>
+</view>

@@ -1,0 +1,39 @@
+/* components/sharebutton/share-button.wxss */
+
+.bg-view {
+  width: 43px;
+  height: 37px;
+  background: rgba(243, 70, 66, 1);
+  box-shadow: 0px 1px 1px 0px rgba(25, 31, 39, 0.09);
+  border-radius: 0px 100px 100px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.share-image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+
+.share-text {
+  width: 20px;
+  height: 12px;
+  font-size: 10px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 12px;
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+}
+
+.share-real-button
+{
+  opacity: 0.0;
+  position: absolute;
+  width: 43px;
+  height: 37px;
+}

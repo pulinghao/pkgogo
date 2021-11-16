@@ -1,0 +1,59 @@
+<view class="c_tabbar"
+      style="color:{{data.color?data.color:''}};height:{{ isIphoneX }}rpx;border-color: {{data.borderStyle?data.borderStyle:''}};background-color:{{data.backgroundColor?data.backgroundColor:''}}">
+    <block wx:if="{{punchState==1}}">
+        <view wx:for="{{ data.list }}" style="bottom:{{iconM}}rpx; margin-bottom: {{side}}rpx" wx:for-item="item"
+              wx:for-index="idx" wx:key="key" class="tabbar_item {{item.iconType? item.iconType:''}}"
+              data-index="{{idx}}"
+              bindtap="change">
+            <image class="tabbar_item_img {{item.iconType? item.iconType:''}}"
+                   src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}"></image>
+            <text class="tabbar_item_title {{item.iconType? item.iconType:''}}">{{item.text}}</text>
+        </view>
+    </block>
+    <block wx:if="{{punchState==2}}">
+        <view wx:for="{{ data.list }}" style="bottom:{{iconM}}rpx; margin-bottom: {{side}}rpx" wx:for-item="item"
+              wx:for-index="idx" wx:key="key" class="join_tabbar_item {{item.iconType? item.iconType:''}}"
+              data-index="{{idx}}"
+              bindtap="change">
+            <image class="join_tabbar_item_img {{item.iconType? item.iconType:''}}"
+                   src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}"></image>
+            <text class="join_tabbar_item_title {{item.iconType? item.iconType:''}}">{{item.textTwo}}</text>
+        </view>
+    </block>
+    <block wx:if="{{punchState==3}}">
+        <view wx:for="{{ data.list }}" style="bottom:{{iconM}}rpx; margin-bottom: {{side}}rpx" wx:for-item="item"
+              wx:for-index="idx" wx:key="key" class="newtabbar_item {{item.iconType? item.iconType:''}}"
+              data-index="{{idx}}"
+              bindtap="change">
+            <block wx:if="{{idx==1}}">
+                <text class="newtabbar_item_title {{item.iconType? item.iconType:''}}">{{item.textThree}}</text>
+            </block>
+            <block wx:else>
+                <image class="newtabbar_item_img {{item.iconType? item.iconType:''}}"
+                       src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}"></image>
+                <text class="newtabbar_item_title {{item.iconType? item.iconType:''}}">{{item.textThree}}</text>
+            </block>
+        </view>
+    </block>
+    <block wx:if="{{punchState==4}}">
+        <view wx:for="{{ data.list }}" style="bottom:{{iconM}}rpx; margin-bottom: {{side}}rpx" wx:for-item="item"
+              wx:for-index="idx" wx:key="key" class="newtabbar_item {{item.iconType? item.iconType:''}}"
+              data-index="{{idx}}"
+              bindtap="change">
+            <block wx:if="{{idx==1}}">
+                <view class="newtabbar_item_container">
+                    <text class="newtabbar_item_text">第</text>
+                    <text class="newtabbar_item_day">{{clockday}}</text>
+                    <text class="newtabbar_item_text">天</text>
+                </view>
+            </block>
+            <block wx:else>
+                <image class="newtabbar_item_img {{item.iconType? item.iconType:''}}"
+                       src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}"></image>
+                <text class="newtabbar_item_title {{item.iconType? item.iconType:''}}">{{item.textThree}}</text>
+            </block>
+        </view>
+    </block>
+
+</view>
+<view class="blank"></view>

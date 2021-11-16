@@ -1,0 +1,31 @@
+<!-- 已经投票后的视图 -->
+<!-- <voted-view left-text="左边文字" left-percent="80" left-num="30" 
+            right-text="右边文字" right-percent="40" right-num="50"></voted-view> -->
+<view voted-view>
+  <view class="vote-text-container">
+    <view class="left-text-container">
+      <text class="left-text-voted">{{leftText}} {{leftNum}}人</text>
+      <text wx:if="{{userOption == 1}}" class="left-voted-label">(已选)</text>
+      <image wx:if="{{result == 1 && (settle || end)}}" class="win-cup" src="/components/votedview/images/cup.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+    </view>
+    <view class="text-container">
+      <text class="right-text-voted">{{rightText}} {{rightNum}}人</text>
+      <text wx:if="{{userOption == 2}}" class="right-voted-label">(已选)</text>
+      <image wx:if="{{result == 2 && (settle || end)}}" class="win-cup" src="/components/votedview/images/cup.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+    </view>
+  </view>
+
+  <view class="vote-rate-container">
+    <view class="left-part">
+      <view class="left-part-bar" style="width:{{leftPercent}}%">
+        <text class="total">{{leftTotal}}</text>
+      </view>
+    </view>
+    <image class="vote-vs-icon" src="/images/vs.png"></image>
+    <view class="right-part">
+      <view class="right-part-bar" style="width:{{rightPercent}}%">
+        <text class="total">{{rightTotal}}</text>
+      </view>
+    </view>
+  </view>
+</view>

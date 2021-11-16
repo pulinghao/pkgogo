@@ -1,0 +1,37 @@
+/* components/comment_slide/comment_slide.wxss */
+
+.comment-slide {
+  display: flex;
+  flex-direction: row;
+  height: 32rpx;
+  margin-top: 30rpx;
+  margin-left: 24rpx;
+}
+
+.user-img {
+  position: relative;
+  width: 32rpx;
+  height: 32rpx;
+  /*border: 1px solid rgba(228, 228, 228, 1);*/
+  border-radius: 50%;
+  margin-top: 2rpx;
+}
+
+.comment-txt {
+  position: absolute;
+  z-index: -1;
+  height: 30rpx;
+  background: rgba(1, 70, 191, 1);
+  border-radius: 0px 15px 15px 0px;
+  opacity: 0.8245;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(138, 171, 235, 1);
+  line-height: 24rpx;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+  padding-top: 5rpx;
+  text-align: center;
+  margin-left: 15rpx;
+}

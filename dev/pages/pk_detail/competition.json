@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#1E6BDA",
+  "navigationBarTitleText": "趣PK",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "share-button": "/components/sharebutton/share-button",
+    "votebar":"/components/votebar/votebar",
+    "commentbar": "/components/comment_slide/comment_slide",
+    "reward-toast":"/components/rewardtoast/reward-toast"
+  }
+}

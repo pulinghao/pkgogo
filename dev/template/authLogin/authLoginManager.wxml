@@ -1,0 +1,38 @@
+<template name='authLoginManager'>
+  <view wx:if="{{showLogin}}">
+    <view class="login-cover">
+      <view class="t_w">
+        <!--弹出框开始-->
+        <view class="tanchu_view">
+          <view class='content'>
+            <view class="title">该操作需要</view>
+            <view class='subtitle'>微信授权登录后进行</view>
+            <view class="main">
+              <view class='weixin-part'>
+                <image src='../../images/weixinicon.png' mode='aspectFit'></image>
+              </view>
+              <view class='trans-part'>
+                <image src='../../images/transicon.png' mode='aspectFit'></image>
+              </view>
+              <view class='app-part'>
+                <image src='../../images/pkicon.png' mode='aspectFit'></image>
+              </view>
+            </view>
+            <!--确定开始-->
+            <view class="btn-area">
+              <!-- <button class='left' bindtap='onClickCancel'>
+                取消
+              </button> -->
+              <button class='right' bindtap='confirmToJoin' open-type="getUserInfo" bindgetuserinfo="getSystemUserInfo">
+                微信登录
+              </button>
+            </view>
+            <!--确定结束-->
+          </view>
+        </view>
+        <!--弹出框结束-->
+      </view>
+    </view>
+  </view>
+
+</template>

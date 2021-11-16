@@ -1,0 +1,145 @@
+.body {
+    width: 100%;
+    height: 1334rpx;
+    background:#FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    width: 680rpx;
+    min-height: 1rpx;
+    border:2px solid rgba(215,215,218,1);
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 35rpx;
+    margin-bottom: 40rpx;
+    padding-top: 22rpx;
+    padding-bottom: 22rpx;
+    padding-left: 14rpx;
+    padding-right: 14rpx;
+}
+.product-container-detail{
+    width: 100%;
+    min-height: 1rpx;
+    align-self: flex-start;
+    font-size:28rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(62,62,62,1);
+    line-height:18px;
+}
+
+#user-info {
+    margin-left: 56rpx;
+    margin-right: 56rpx;
+    margin-top: 36rpx;
+}
+
+.info-container {
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.info-label {
+    font-size: 28rpx;
+    align-self: center;
+    font-weight: bolder;
+    font-family:PingFangTC-Medium;
+    color:rgba(50,50,50,1);
+    line-height:20rpx;
+}
+
+.info-content {
+    width: 520rpx;
+    height: 70rpx;
+    border:1px solid rgba(76,77,89,1);
+    font-size: 26rpx;
+    background:rgba(255,255,255,1);
+    opacity:0.5061;
+}
+
+#submit-btn {
+    width: 462rpx;
+    height: 90rpx;
+    background-color: #0278FF;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    border-radius: 0;
+    margin-top: 84rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 用户信息确认弹窗开始 */
+.qpk-modal-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #0000007F;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.qpk-modal {
+    width: 534rpx;
+    height: 428rpx;
+    margin-top: 234rpx;
+    background-color: #FFFFFF;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    border-radius: 14rpx;
+}
+
+.qpk-modal-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-top: 88rpx;
+    text-align: center;
+}
+
+.qpk-modal-content {
+    margin-top: 46rpx;
+    font-size: 32rpx;
+    color: #3E3E3E;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+#qpk-modal-confirm-btn {
+    width: 240rpx;
+    height: 70rpx;
+    margin-top: 44rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    background-color: #FF003C;
+    color: #FFFFFF;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+}
+/* 用户信息确认弹窗结束 */
+

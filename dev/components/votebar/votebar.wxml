@@ -1,0 +1,52 @@
+<!--components/votebar/votebar.wxml-->
+<view class='votebar'>
+  <block wx:if='{{ifSettle}}'>
+    <!-- 1. 是否结算 -->
+    <view class='voted-part'>
+      <voted-view left-text='{{leftText}}' right-text='{{rightText}}' user-option-index='{{userOptionIndex}}' comp-result='{{compResult}}' left-percent='{{leftPercent}}' right-percent='{{rightPercent}}'>
+      </voted-view>
+      <view class='voted-text-part'>
+        <text class='voted-text'>{{votedText}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <block wx:if='{{ifSeal}}'>
+      <!-- 2. 是否封盘 -->
+      <view class='voted-part'>
+      <voted-view left-text='{{leftText}}' right-text='{{rightText}}' user-option-index='{{userOptionIndex}}' comp-result='{{compResult}}' left-percent='{{leftPercent}}' right-percent='{{rightPercent}}'>
+      </voted-view>
+      <view class='voted-text-part'>
+        <text class='voted-text'>{{votedText}}</text>
+      </view>
+    </view>
+    </block>
+    <block wx:else>
+      <!-- 3. 是否已经投注 -->
+      <block wx:if='{{!hasVote}}'>
+        <view class='choose-view'>
+          <view class='left-choice-bg'>
+            <view class='left-choice' catchtap="onClickYes">
+              <text class='left-text'>{{leftBtnStr}}</text>
+            </view>
+          </view>
+          <view class='right-choice-bg' catchtap="onClickNo">
+            <view class='right-choice'>
+              <text class='right-text'>{{rightBtnStr}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='voted-part'>
+      <voted-view left-text='{{leftText}}' right-text='{{rightText}}' user-option-index='{{userOptionIndex}}' comp-result='{{compResult}}' left-percent='{{leftPercent}}' right-percent='{{rightPercent}}'>
+      </voted-view>
+      <view class='voted-text-part'>
+        <text class='voted-text'>{{votedText}}</text>
+      </view>
+    </view>
+      </block>
+    </block>
+  </block>
+
+</view>

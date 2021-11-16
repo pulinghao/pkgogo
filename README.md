@@ -1,2 +1,5 @@
-# pkgogo
-趣PK小程序项目
+#趣Pk
+
+Created By Linghao Pu
+
+Time:2018-11-09

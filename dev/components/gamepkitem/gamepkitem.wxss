@@ -1,0 +1,82 @@
+/* components/gamepkitem/gamepkitem.wxss */
+.gamepk-item-container{
+    width:280rpx;
+    height:144rpx;
+    background:rgba(57,59,86,1);
+    border-radius:8rpx;
+    /*box-shadow: 4rpx 4rpx 10rpx #757575;*/
+    box-shadow:2rpx 2rpx 10rpx #A1A1A1;
+    margin-bottom: 20rpx;
+    margin-left: 10rpx;
+    margin-top: 20rpx;
+}
+.top-item-container{
+    height: 80rpx;
+    text-align: center;
+}
+.game-option{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    line-height: 80rpx;
+}
+.foot-item-container{
+    height: 64rpx;
+    background-color: white;
+    border-bottom-left-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+    text-align: center;
+}
+.foot-text{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    line-height:64rpx;
+}
+
+.gamepk-item-container-end{
+    width:280rpx;
+    height:144rpx;
+    background:rgba(2, 120, 255, 1);
+    border-radius:8rpx;
+    /*box-shadow: 4rpx 4rpx 10rpx #757575;*/
+    box-shadow:2rpx 2rpx 10rpx #A1A1A1;
+    margin-bottom: 20rpx;
+    margin-left: 10rpx;
+    margin-top: 20rpx;
+}
+.top-item-container-end{
+    height: 80rpx;
+    text-align: center;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 260rpx;
+}
+.game-title{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    line-height: 80rpx;
+}
+.foot-item-container-end{
+    height: 64rpx;
+    background-color: white;
+    border-bottom-left-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+    text-align: center;
+}
+.game-result{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    line-height:64rpx;
+}

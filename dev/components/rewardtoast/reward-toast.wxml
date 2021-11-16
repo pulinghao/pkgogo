@@ -1,0 +1,7 @@
+<view class="reward-toast" wx:if="{{isShow}}">
+  <view class="toast-container">
+    <image class="remaining-money-icon" src="../../images/toast-gold-icon.png" mode="aspectFit|aspectFill|widthFix" />
+    <view class="toast-title">{{toastTitle}}</view>
+    <view class="toast-subtitle">{{toastSubtitle}}</view>
+  </view>
+</view>

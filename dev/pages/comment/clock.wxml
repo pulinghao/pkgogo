@@ -1,0 +1,47 @@
+<!--pages/comment/clock.wxml   打卡评论-->
+<view class='title'>
+    <text class="title-text">{{clockTitle}}第 </text>
+    <text class="title-text-count">{{contiDay}}</text>
+    <text class="title-text"> 天  今日打卡时间</text>
+    <text class="title-text-count">{{clockTime}}</text>
+</view>
+<view class='textarea' hidden="{{isShowtextarea}}">
+    <textarea class='row-textarea' placeholder='填写您的评论，所有人都能看得到喔～' name='textarea' maxlength='-1' value='{{content}}' bindinput="bindInput" />
+    <view class="weui-uploader">
+        <block wx:for="{{imageList}}" wx:for-item="image">
+            <view class="weui-uploader-file">
+                <image class="weui-uploader-img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                <image class="delete-img" src="../../images/icon_delete_img.png" bindtap="deleteImg"></image>
+            </view>
+        </block>
+        <view class="weui-uploader-button" bindtap="chooseImage">
+            <image class="button-img" src="../../images/icon_upload.png"></image>
+        </view>
+    </view>
+</view>
+<!--<view class='comment' bindtap='requestComment'>
+    <text class='fasong'>发送</text>
+</view>-->
+<form bindsubmit="requestComment" report-submit='true'>
+    <button class='comment' form-type="submit">发送
+    </button>
+</form>
+
+<reward-toast is-show="{{isShowToast}}" toast-title="{{'打卡成功'}}" toast-subtitle="完成本期打卡可瓜分{{getMoney}}"></reward-toast>
+
+<!--生成海报-->
+
+
+<view class='imagePathBox' hidden="{{maskHidden == false}}">
+    <button class="post-delete" bindtap="hidden"><image src="../../images/icon_post_delete.png" class="post-delete-img" mode="scaleToFill"></image>
+    </button>
+    <image src="{{imagePath}}" class='creating' ></image>
+    <!--<button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>-->
+    <view class="button-container">
+        <button class="button-save" bindtap="save"><text class="button-save-text">保存到相册</text></button>
+        <button class="button-share" open-type="share"><text class="button-share-text">分享给朋友</text></button>
+    </view>
+</view>
+<view class="canvas-box">
+    <canvas  style="width:341px;height: 565px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+</view>

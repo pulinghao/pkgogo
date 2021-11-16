@@ -1,0 +1,216 @@
+/* components/clocklist_head/clocklist_head.wxss */
+/*
+头部卡片
+*/
+.clock-card{
+    width:682rpx;
+    height:340rpx;
+    background:rgba(43,44,58,1);
+    border-radius:12rpx;
+    border:4rpx solid rgba(76,77,89,1);
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.clock-card-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.top-left-text{
+    font-size:32rpx;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    border-bottom:7rpx solid #F8E71C;
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+}
+.top-right-text{
+    font-size:20rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-right: 20rpx;
+}
+.clock-card-mid{
+    width: 672rpx;
+    height: 170rpx;
+    margin-top: 20rpx;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+}
+.mid-bg-img{
+    position: absolute;
+    width: 672rpx;
+    height: 170rpx;
+}
+.clock-share-container{
+    position: relative;
+    z-index: 1;
+    width:116rpx;
+    height:54rpx;
+    background:rgba(111,110,255,1);
+    box-shadow:0px 2px 4px 0px rgba(0,0,0,0.23);
+    border-radius:10rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-left: 545rpx;
+}
+.clock-share-img{
+    position: relative;
+    z-index: 1;
+    width:24rpx;
+    height:24rpx;
+    margin-right: 10rpx;
+}
+.clock-share-text{
+    position: relative;
+    z-index: 1;
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+.clock-mid-time{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+}
+.clock-mid-time-text{
+    font-size:26rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-left: 15rpx;
+    margin-top: 57rpx;
+    margin-bottom: 15rpx;
+    padding-right: 8rpx;
+    border-right: 1rpx solid rgba(255, 255, 255, 0.6);
+}
+.clock-mid-time-day{
+    font-size:26rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-left: 8rpx;
+    margin-top: 57rpx;
+    margin-bottom: 15rpx;
+}
+.share-btn{
+    width:116rpx;
+    height:54rpx;
+    background: transparent;
+    position: absolute;
+    z-index: 99;
+}
+
+.foot-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.clock-card-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20rpx;
+    margin-bottom: 10rpx;
+}
+.foot-left-img{
+    width: 28rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-top: 20rpx;
+    margin-right: 15rpx;
+}
+.foot-left-title{
+    font-size:26rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-right: 10rpx;
+    line-height: 80rpx;
+}
+.foot-left-num{
+    font-size:26rpx;
+    font-family:Helvetica;
+    color:rgba(255,255,255,1);
+    line-height: 80rpx;
+    margin-right: 10rpx;
+    text-align: center;
+}
+.foot-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.foot-right-img{
+    display: inline;
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-top: 20rpx;
+    margin-right:10rpx;
+}
+.clocking-card-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.clocking-left{
+    display: flex;
+    flex-direction: row;
+}
+.clocking-left-img{
+    width: 28rpx;
+    height: 40rpx;
+    margin-top: 25rpx;
+    margin-right: 15rpx;
+    /*margin-bottom: 10rpx;*/
+}
+.clocking-left-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10rpx;
+}
+.clocking-left-num{
+    font-size:26rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    text-align: center;
+}
+.clocking-left-title{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,0.7);
+}
+.clocking-right{
+    display: flex;
+    flex-direction: row;
+}
+.clocking-right-img{
+    width: 35rpx;
+    height: 35rpx;
+    margin-top: 30rpx;
+    margin-right: 10rpx;
+    /*margin-bottom: 15rpx;*/
+}
+.clocking-right-title{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,0.7);
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+}

@@ -1,0 +1,58 @@
+.c_tabbar {
+  bottom: 0;
+  position: fixed;
+  height: 95rpx;
+  border-top: 1px solid #dcdcdc;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #999;
+  background-color: #fff;
+  padding: 0;
+}
+
+.c_tabbar .tabbar_item {
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 中心按钮区 */
+.c_tabbar .tabbar_item.big{
+  width: 100rpx;
+  height: 100rpx;
+  background:linear-gradient(119deg,rgba(255,108,21,1) 0%,rgba(255,144,0,1) 100%);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.c_tabbar .tabbar_item .tabbar_item_img {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.c_tabbar .tabbar_item .tabbar_item_title{
+  font-size: 30rpx;
+  color: #323320;
+  margin-bottom: 10rpx;
+}
+
+/* big icon */
+.c_tabbar .tabbar_item_img.big {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.c_tabbar .tabbar_item_title.big
+{
+  color: #FFFFFF;
+  font-size: 20rpx;
+}
+

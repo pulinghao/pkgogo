@@ -1,0 +1,68 @@
+<!--pages/rank/rank.wxml   排行榜页-->
+<view class="body">
+    <view class="header">
+        <!-- <image src="../../images/bg_rank.png" mode="scaleToFill"></image>-->
+        <text class="header-text">{{pkTitle}}排行榜</text>
+        <text class="header-time">数据更新至：{{updateTime}}</text>
+    </view>
+    <view class="banner">
+        <image class="banner-img" src="../../images/bg_rank_three.png"></image>
+        <view class="banner-third">
+            <view class="banner-third-container">
+                <image class="banner-third-img" src="../../images/icon_rank_third.png"></image>
+                <image class="banner-third-userImg" src="{{threeList[2].head}}"></image>
+            </view>
+            <text class="banner-userName">{{threeList[2].name}}</text>
+            <view>
+                <text class="rank-list-count">{{threeList[2].money}}</text>
+                <text class="rank-list-text">PK币</text>
+            </view>
+        </view>
+        <view class="banner-first">
+            <view class="banner-first-container">
+                <image class="banner-first-img" src="../../images/icon_rank_first.png"></image>
+                <image class="banner-first-userImg" src="{{threeList[0].head}}"></image>
+            </view>
+            <text class="banner-userName">{{threeList[0].name}}</text>
+            <view>
+                <text class="rank-list-count">{{threeList[0].money}}</text>
+                <text class="rank-list-text">PK币</text>
+            </view>
+        </view>
+        <view class="banner-second">
+            <view class="banner-second-container">
+                <image class="banner-second-img" src="../../images/icon_rank_second.png"></image>
+                <image class="banner-second-userImg" src="{{threeList[1].head}}"></image>
+            </view>
+            <text class="banner-userName">{{threeList[1].name}}</text>
+            <view>
+                <text class="rank-list-count">{{threeList[1].money}}</text>
+                <text class="rank-list-text">PK币</text>
+            </view>
+        </view>
+    </view>
+    <scroll-view scroll-y="true" class="rank">
+        <block wx:if="{{rankList.length>0}}">
+            <block wx:for="{{rankList}}" wx:key="index" wx:for-item="item">
+                <view class="rank-list">
+                    <view class="rank-list-left">
+                        <text class="rank-list-order">{{index+4}}</text>
+                        <image class="rank-list--img" src="{{item.head}}"></image>
+                        <text class="rank-list-name">{{item.name}}</text>
+                    </view>
+                    <view class="rank-list-right">
+                        <text class="rank-list-count">{{item.money}}</text>
+                        <text class="rank-list-text">PK币</text>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </scroll-view>
+    <view class="footer">
+        <view class="footer-button">
+            <button open-type="share" class="share-button"></button>
+            <image class="footer-button-share" src="../../images/share.png"></image>
+            <text class="footer-button-text">分享给微信好友</text>
+        </view>
+    </view>
+</view>

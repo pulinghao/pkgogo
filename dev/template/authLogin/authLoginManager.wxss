@@ -1,0 +1,144 @@
+/* 蒙层 */
+
+.login-cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.login-cover .t_w {
+  position: relative;
+  
+}
+
+.login-cover .tanchu_view {
+  width: 80%;
+  height: 464rpx;
+  margin: 25% auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 4rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-cover .tanchu_view .content
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-cover .content .title{
+  height: 18px;
+  font-size: 18px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(55, 55, 55, 1);
+  line-height: 20px;
+  padding-top: 10rpx;
+}
+
+.content .subtitle {
+  height: 20px;
+  font-size: 18px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(55, 55, 55, 1);
+  line-height: 20px;
+  padding-top: 20rpx;
+}
+
+.tanchu_view .subtitle .left {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(65, 65, 65, 1);
+  margin-left: 30rpx;
+}
+
+.tanchu_view .subtitle .right {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(65, 65, 65, 1);
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.tanchu_view .content .main
+{
+  display: flex;
+  flex-direction: row;
+  padding-top: 30rpx;
+  padding-bottom: 15rpx;
+}
+
+.tanchu_view .content .main .weixin-part
+{
+  width: 112rpx;
+  height: 88rpx;
+}
+
+.tanchu_view .content .main .weixin-part image
+{
+  width: 112rpx;
+  height: 88rpx; 
+}
+
+.tanchu_view .content .main .trans-part image
+{
+  width: 112rpx;
+  height: 88rpx; 
+}
+
+.tanchu_view .content .main .app-part image
+{
+  width: 112rpx;
+  height: 88rpx; 
+}
+.tanchu_view .btn-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+
+.tanchu_view .btn-area .left {
+  width: 120px;
+  height: 35px;
+  background: rgba(171, 171, 171, 1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 15rpx;
+  color: #fff;
+}
+
+.tanchu_view .btn-area .right {
+  width: 120px;
+  height: 35px;
+  background:rgba(32,199,82,1);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15rpx;
+  color: #fff;
+}

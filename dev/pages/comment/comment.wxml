@@ -1,0 +1,25 @@
+<!--pages/comment/comment.wxml     评论回复-->
+<!--<view class='title'>
+    <text class="title-text">早起第 </text>
+    <text class="title-text-count">{{contiDay}}</text>
+    <text class="title-text"> 天  今日打卡时间</text>
+    <text class="title-text-count">{{clockTime}}</text>
+</view>-->
+<view class='textarea'>
+    <textarea class='row-textarea' placeholder='填写您的评论回复，所有人都能看得到喔～' name='textarea' maxlength='-1' value='{{content}}' bindinput="bindInput" />
+    <view class="weui-uploader">
+        <block wx:for="{{imageList}}" wx:for-item="image">
+            <view class="weui-uploader-file">
+                <image class="weui-uploader-img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                <image class="delete-img" src="../../images/icon_delete_img.png" bindtap="deleteImg"></image>
+            </view>
+        </block>
+        <view class="weui-uploader-button" bindtap="chooseImage">
+            <image class="button-img" src="../../images/icon_upload.png"></image>
+        </view>
+    </view>
+</view>
+<view class='comment' bindtap='requestComment'>
+    <text class='fasong'>发送</text>
+</view>
+

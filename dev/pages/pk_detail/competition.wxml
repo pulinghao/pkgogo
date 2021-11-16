@@ -1,0 +1,140 @@
+<!--pages/pk_detail/competition.wxml-->
+<import src="../../template/authLogin/authLoginManager.wxml" />
+<share-button class='share-part'>
+</share-button>
+<view class='head'>
+  <view class='first'>
+    <image class="head-title-img" src="../../images/icon_title.png" mode="aspectFill"></image>
+  </view>
+  <view class='second'>
+    <view class="subtitle-line"></view>
+    <text>胜利方瓜分失败方PK币</text>
+    <view class="subtitle-line"></view>
+  </view>
+</view>
+<view class='body'>
+  <view class='title-part'>
+    <image class="title-part-bg" src="../../images/bg_PkDetail.png" mode="aspectFill"></image>
+    <view class='title'> {{pk_info.title}}</view>
+    <view class='subtitle'>{{pk_info.subtitle}}</view>
+  </view>
+  <view class='mid-part'>
+    <view class='mid-title'>当前奖池</view>
+    <view class='mid-num'>
+      <view wx:for='{{pk_info.pool_money_array}}' class='mid-item'>{{item}}</view>
+    </view>
+    <view class='mid-pk'>PK币</view>
+  </view>
+  <view class='img-part'>
+    <image src='{{pk_info.img}}' class='comp-image' mode='aspectFill'></image>
+  </view>
+  <view class='join'>
+    <view class='left-time'>
+      <block wx:if='{{!seal}}'>
+        <view class="left-time-container">
+          <image class="left-time-bg" src="/components/pkcarditem/images/remaining-progress-bg.png"></image>
+          <text class="left-time-text">距今</text>
+          <text class='left-time-detail'>{{dd_time_count}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:if='{{!settle}}'>
+          <view class="left-time-container">
+            <image class="left-time-bg-wait" src="/components/pkcarditem/images/remaining-progress-bg.png"></image>
+            <text class='left-time-text'>已封盘,结果待公布</text>
+          </view>
+        </block>
+        <block wx:else>
+          <image class="left-time-bg-finish" src="/components/pkcarditem/images/remaining-progress-bg.png"></image>
+          <text class='left-time-text'>胜负已分出</text>
+        </block>
+      </block>
+      <!-- <image class='left-time-bg' src='../../images/left_time.png' mode='aspectFit'></image>-->
+    </view>
+    <view class='join-num'>
+      <text class='join-num-text'>{{pk_info.join_num}}人参与</text>
+    </view>
+  </view>
+  <view class="comment-container">
+    <view class="comment">
+      <view class='left-part'>
+        <block wx:for='{{commentLlist}}' wx:for-index="idx" wx:key="{{commentLlist}}">
+          <block wx:if="{{idx < 5}}">
+            <commentbar img-url='{{item.userPhoto}}' slideText='{{item.content}}'>
+            </commentbar>
+          </block>
+        </block>
+      </view>
+      <view class='right-part' bindtap='onClickComment'>
+        <image class="comment-icon" src="../../images/icon_comment.png"></image>
+      </view>
+    </view>
+  </view>
+  <votebar class='vote-bar' has-vote='{{pk_info.userJoinIn}}' left-btn-str='{{pk_info.option1}}' if-settle='{{settle}}' if-seal='{{seal}}' right-btn-str='{{pk_info.option2}}' left-text='支持{{pk_info.option1}}{{pk_info.option1Num}}人{{pk_info.userOptionIndex==1?"(已选)":""}}'
+    right-text='支持{{pk_info.option2}}{{pk_info.option2Num}}人{{pk_info.userOptionIndex==2?"(已选)":""}}' voted-text='{{pk_info.userOption}}' bindleftevent="onVoteForLeft" bindrightevent="onVoteForRight" comp-result="{{pk_info.compResult}}" user-option-index="{{pk_info.userOptionIndex}}"
+    left-percent="{{pk_info.option1Per}}" right-percent="{{pk_info.option2Per}}"></votebar>
+  <view class="float-button" bindtap="gotoIndex"  hidden="{{isShowButton}}">
+    <image class="float-button-img" src="../../images/icon_float.png"></image>
+  </view>
+</view>
+
+<!-- 蒙层 -->
+
+<view>
+  <view class="zhezao" hidden="{{hidden}}">
+    <view class="t_w">
+      <!--弹出框开始-->
+      <block wx:if='{{show_chosen_toast}}'>
+        <view class="tanchu_view">
+          <view>
+            <view class="title">确认参与</view>
+            <view class='subtitle'>
+              <view class='left'>本次下注需{{pk_info.pay_money}}PK币</view>
+              <view class='right'>下注:{{choose_content}}</view>
+            </view>
+
+            <!--确定开始-->
+            <view class="btn-area">
+              <view class='left' bindtap='onClickCancel'>
+                我再想想
+              </view>
+              <form bindsubmit="onClickConfirm" report-submit='true'>
+                <button class='right' form-type="submit">确认
+                </button>
+              </form>
+              <!--<view class='right' bindtap='onClickConfirm'>
+                                确认
+                            </view>-->
+            </view>
+            <!--确定结束-->
+            <view class="main">
+              <view class='instructions'>
+                <text class='xiaoguize'>若无人参与，或无法分出胜负，则于截止日期7天内返还</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:if='{{vote_ok}}'>
+          <view class='vote-ok-view'>
+            <image src='../../images/vote-ok.png' mode='aspectFit' class='vote-ok-img'></image>
+            <text class='vote-ok-text'>参与成功</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='vote-fail-view'>
+            <text class='vote-fail-text'>参与失败</text>
+            <text class='vote-fail-subtext'>当前PK币不足</text>
+          </view>
+        </block>
+      </block>
+
+      <!--弹出框结束-->
+    </view>
+  </view>
+</view>
+<template is="authLoginManager" data="{{...item}}"></template>
+
+<!-- 金币弹框 -->
+<reward-toast is-show="{{isShowToast}}" toast-title="{{'完成任务'}}" toast-subtitle="{{'+50积分'}}" bindtap='onClickCancelToast'></reward-toast>

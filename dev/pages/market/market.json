@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "积分换购",
+  "usingComponents": {
+    "reward-toast":"/components/rewardtoast/reward-toast"
+  }
+}

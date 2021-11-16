@@ -1,0 +1,18 @@
+<view class="pk-header-card-item" data-item='{{itemData}}' bindtap='goDetailPage'>
+  <block wx:if="{{!isNoMore}}">
+    <image class="pk-item-bg" src="{{itemData.img}}" mode="aspectFill"/>
+    <view class="title-container">
+      <text class="pk-title">{{itemData.title}}</text>
+      <text class="pk-number">{{itemData.joinNum}}人参与中</text>
+    </view>
+  </block>
+
+  <!-- 没有更多 -->
+  <block wx:else>
+    <view class="no-more-view">
+      <text class="no-more-text">更多PK
+        敬请期待
+      </text>
+    </view>
+  </block>
+</view>

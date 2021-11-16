@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabbar": "/components/tabbar/tabbar",
+    "clocklist_head":"/components/clocklisthead/clocklist_head",
+    "newtabbar": "/components/newtabbar/newtabbar"
+  }
+}

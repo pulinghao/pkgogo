@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "to-vote-view": "/components/tovoteview/to-vote-view",
+        "voted-view": "/components/votedview/voted-view"
+    }
+}

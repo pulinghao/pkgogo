@@ -1,0 +1,12 @@
+<!-- 投票view，或者说未投票状态view -->
+<!-- 使用示例：  <to-vote-view left-text="左边文字" right-text="右边文字"></to-vote-view> -->
+
+<view class="to-vote-view">
+    <view class="to-vote-left-part" catchtap="onClickYes">
+        <text class="to-vote-text">{{leftText}}</text>
+    </view>
+    <image class="to-vote-vs-icon" src="/images/vs.png" mode="aspectFit"> </image>
+    <view class="to-vote-right-part" catchtap="onClickNo">
+        <text class="to-vote-text">{{rightText}}</text>
+    </view>
+</view>

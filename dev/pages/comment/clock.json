@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "reward-toast":"/components/rewardtoast/reward-toast"
+  }
+}

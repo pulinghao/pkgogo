@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "pk-result-card-view": "../../component/pk-result-card/pk-result-card-view",
+    "versus-card-item": "/components/versuscarditem/versus-card-item",
+    "user-info-view": "/components/userinfoview/user-info-view",
+    "pk-card-item":"/components/pkcarditem/pk-card-item",
+    "no-data": "/components/nodata/no-data"
+  }
+}

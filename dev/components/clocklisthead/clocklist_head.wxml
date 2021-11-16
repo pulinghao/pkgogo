@@ -1,0 +1,69 @@
+<!--components/clocklist_head/clocklist_head.wxml-->
+<view class="clock-card">
+    <view class="clock-card-top">
+        <view class="top-left">
+            <text class="top-left-text">{{data.sub_title}}</text>
+        </view>
+        <view class="top-right">
+            <text class="top-right-text">{{data.joinNum}} 个人已加入</text>
+        </view>
+    </view>
+    <view class="clock-card-mid">
+        <image src="{{data.img}}" class="mid-bg-img" mode="scaleToFill"></image>
+        <view class="clock-share-container">
+            <button class="share-btn" open-type='share'></button>
+            <image class="clock-share-img" src="../../images/share.png"></image>
+            <text class="clock-share-text">分享</text>
+        </view>
+        <view class="clock-mid-time">
+            <block wx:if="{{data.isSignup===true&&data.isAllowPunch==true}}">
+                <view class="clock-mid-time-text">正在进行</view>
+            </block>
+            <block wx:else>
+                <view class="clock-mid-time-text">即将进行</view>
+            </block>
+            <view class="clock-mid-time-day">{{data.cycleDate}}</view>
+        </view>
+    </view>
+    <block wx:if="{{data.isSignup===false || data.isAllowPunch===false}}">
+        <view class="clock-card-foot">
+            <view class="foot-left">
+                <image src="../../images/award_icon.png" class="foot-left-img"></image>
+                <view class="foot-left-text">
+                    <text class="foot-left-title">本期奖池</text>
+                    <text class="foot-left-num">{{data.poolMoney }}</text>
+                </view>
+            </view>
+            <view class="foot-right">
+                <image src="../../images/people_icon.png" class="foot-right-img"></image>
+                <text class="foot-left-title">本期参与人数</text>
+                <text class="foot-left-num">{{data.signNum}}</text>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="clocking-card-foot">
+            <view class="clocking-left">
+                <image src="../../images/award_icon.png" class="clocking-left-img"></image>
+                <view class="clocking-left-text">
+                    <text class="clocking-left-num">{{data.poolMoney}}</text>
+                    <text class="clocking-left-title">本期奖池</text>
+                </view>
+            </view>
+            <view class="clocking-right">
+                <image src="../../images/people_icon.png" class="clocking-right-img"></image>
+                <block wx:if="{{data.isAllowPunch==true}}">
+                    <view class="clocking-left-text">
+                        <text class="clocking-left-num">{{data.insistNum }}</text>
+                        <text class="clocking-left-title">坚持打卡人数</text>
+                    </view>
+                    <view style="margin-top:10rpx;float:left;width: 2rpx;height: 55rpx; background: rgba(255, 255, 255, 0.5);"></view>
+                </block>
+                <view class="clocking-left-text">
+                    <text class="clocking-left-num">{{data.signNum}}</text>
+                    <text class="clocking-right-title">本期参与人数</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,114 @@
+<!-- market.wxml 换购商城 -->
+<view class='body'>
+    <view class="top-part">
+      <view class="coin-num-detail">
+        <image class="coin-num-img" src="../../images/bg_pkNumCard.png" mode="scaleToFill"></image>
+        <text class="coin-surplus">PK币余额</text>
+        <view class="coin-surplus-count">
+          <view>
+            <text class='remaining-points'>{{allMoney}}</text>
+          </view>
+          <view>
+            <image class="user-info-pk-icon" src="/components/userinfoview/images/pk-icon.png"></image>
+          </view>
+        </view>
+        <view class="coin-about-detail">
+          <view class="today-coin">
+            <text class="today-coin-name">今日金币</text>
+            <text class="today-coin-count">{{todaycoin}}</text>
+          </view>
+          <view class="all-coin">
+            <text class="all-coin-name">累计赚取金币</text>
+            <text class="all-coin-count">{{totalcoin}}</text>
+          </view>
+          <view class="coin-more" bindtap="goMyPointsPage">
+            <text class="coin-more-name">PK币明细</text>
+            <image class="coin-more-go" src="../../images/icon_return.png"></image>
+          </view>
+        </view>
+        <!--<cover-image src="../../images/bg_pkNumCard.png"></cover-image>-->
+      </view>
+      <button class="day-share" open-type="share" bindtap="goInviteFriend">
+        <view class="day-share-left">
+          <image class="day-share-logo" src="../../images/icon_dayShare.png"></image>
+          <view>
+            <text class="day-share-title">邀请好友一起来</text>
+            <text class="day-share-detail">邀请好友登录并授权，每日最多5位</text>
+          </view>
+        </view>
+        <view class="day-share-right">
+          <text class="day-share-count">+50</text>
+          <text class="day-share-coin">PK币</text>
+          <image class="return-logo" src="../../images/icon_return.png"></image>
+        </view>
+      </button>
+    </view>
+    <view class="footer-part">
+      <view class="coin-task">
+        <view class="devider-line"></view>
+        <view class="coin-task-name">
+          <image class="coin-task-logo" src="../../images/icon_item.png"></image>
+          <text class="coin-task-title">金币任务</text>
+        </view>
+        <view class="coin-task-detail">
+          <view class="coin-task-one" bindtap="goShareOnce">
+            <view>
+              <text class="coin-task-item">分享任意PK一次</text>
+              <text class="coin-task-detail">每日首次分享任意PK给好友</text>
+            </view>
+            <view data-reply-Type="1">
+              <text class="day-share-count">+50</text>
+              <text class="day-share-coin">PK币</text>
+              <image class="coin-return-logo" src="../../images/icon_return.png"></image>
+            </view>
+          </view>
+          <view class="coin-task-two" bindtap="goShareOnce">
+            <view>
+              <text class="coin-task-item">参与任意PK一次</text>
+              <text class="coin-task-detail">每日首次参与任意PK</text>
+            </view>
+            <view bindtap="goPKOnce">
+              <text class="day-share-count">+50</text>
+              <text class="day-share-coin">PK币</text>
+              <image class="coin-return-logo" src="../../images/icon_return.png"></image>
+            </view>
+          </view>
+          <button class="coin-task-three" open-type="share" bindtap="goInviteFriend">
+            <view>
+              <text class="coin-task-invite">邀请好友一起来</text>
+              <text class="coin-task-detail">邀请好友登录并授权，每日最多5位</text>
+            </view>
+            <view>
+              <view class="invite-btn">
+                <text class="invite-btn-count">+50</text>
+                <text class="invite-btn-coin">PK币</text>
+                <image class="invite-btn-logo" src="../../images/icon_return.png"></image>
+              </view>
+            </view>
+          </button>
+        </view>
+      </view>
+      <view class="coin-change">
+        <view class="devider-line"></view>
+        <view class="coin-change-name">
+          <image class="coin-change-logo" src="../../images/icon_item.png"></image>
+          <text class="coin-change-title">金币换购</text>
+        </view>
+        <scroll-view scroll-y='true'>
+        <block wx:if="{{productList.length > 0}}">
+          <block wx:for="{{productList}}">
+            <view class='item-layout' data-product='{{product}}' data-item='{{item}}' bindtap='goRedemptionDetailPage'>
+              <view class='item-layout-head'>
+                <text class='product-name'>{{item.name}}</text>
+                <text class='price'>{{item.price}}积分</text>
+              </view>
+              <image class='product-pic' mode='scaleToFill' src='{{item.img}}'></image>
+            </view>
+          </block>
+        </block>
+        </scroll-view>
+      </view>
+    </view>
+</view>
+<!-- 金币弹框 -->
+<!--<reward-toast is-show="{{true}}" toast-title="{{'完成任务'}}" toast-subtitle="{{'+100积分'}}"></reward-toast>-->

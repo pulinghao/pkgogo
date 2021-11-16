@@ -1,0 +1,413 @@
+/* market.wxss */
+.body {
+    width: 100%;
+    height: 1334rpx;
+}
+.top-part{
+    background: linear-gradient(180deg, rgba(43,44,58,1) 0%, rgba(255,255,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    width:750rpx;
+    height: 498rpx;
+}
+.footer-part{
+    background:rgba(255,255,255,1);
+}
+/*PK币详情*/
+/*.coin-about{
+    display: flex;
+    flex-direction: column;
+    width:750rpx;
+    height: 498rpx;
+}*/
+.coin-num-img{
+    width: 690rpx;
+    height: 336rpx;
+}
+.coin-num-detail{
+    position:relative;
+    display: flex;
+    width: 690rpx;
+    height: 336rpx;
+    flex-direction: column;
+    border-radius: 12rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+.coin-surplus{
+    display: flex;
+    position: absolute;
+    margin-top:40rpx;
+    margin-left: 30rpx;
+    font-size:16px;
+    font-family: PingFangSC-Medium;
+    font-weight:600;
+    color:rgba(50,50,50,1);
+    line-height:22px;
+}
+.coin-surplus-count{
+    position: absolute;
+    display: flex;
+    margin-left: 30rpx;
+    margin-top:110rpx;
+    flex-direction: row;
+    align-items: center;
+}
+.remaining-points{
+    font-size:36px;
+    font-family:DINCondensed-Bold;
+    font-weight:bold;
+    color:rgba(50,50,50,1);
+    line-height:43px;
+}
+.user-info-pk-icon {
+    position: absolute;
+    width: 42rpx;
+    height: 35rpx;
+    margin-left: 20rpx;
+}
+.coin-about-detail{
+    margin-top: 235rpx;
+    margin-left: 30rpx;
+    position: absolute;
+    display:flex;
+    flex-direction: row;
+}
+.today-coin{
+    width: 130rpx;
+    height: 100rpx;
+    display:flex;
+    flex-direction: column;
+    border-right: white 2rpx solid;
+}
+.today-coin-name{
+    margin-top: 20rpx;
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:17px;
+}
+.today-coin-count{
+    font-size:15px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(1,118,255,1);
+    line-height:21px;
+}
+.all-coin{
+    width: 350rpx;
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+    display:flex;
+    flex-direction: column;
+}
+.all-coin-name{
+    margin-top: 7rpx;
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:34rpx;
+}
+.all-coin-count{
+    font-size:30rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:#FE953D;
+    line-height:21px;
+}
+.coin-more{
+    margin-top: 30rpx;
+
+}
+.coin-more-name{
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    line-height:17px;
+}
+.coin-more-go{
+    width: 10rpx;
+    height: 20rpx;
+    margin-left: 20rpx;
+}
+/*分享一次小程序*/
+.day-share{
+    display: flex;
+    flex-direction: row;
+/*    width:750rpx;*/
+    width: 100%;
+    height: 150rpx;
+    margin-top: 15rpx;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+}
+.day-share::after{
+    border: none;
+}
+.day-share-left{
+    display: flex;
+    flex-direction: row;
+}
+.day-share-logo{
+    height: 66rpx;
+    width: 66rpx;
+    /*margin-left: 20rpx;*/
+    margin-right: 20rpx;
+    margin-top: 5rpx;
+}
+.day-share-title{
+    display: block;
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    color:rgba(54,54,54,1);
+    line-height:40rpx;
+    text-align: left;
+}
+.day-share-detail{
+    display: block;
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:17px;
+}
+.day-share-right{
+    /*width: 130rpx;
+    height: 80rpx;*/
+}
+.day-share-count{
+    color:#0176FF;
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    line-height:22px;
+    margin-right: 10rpx;
+    margin-left: 30rpx;
+}
+.day-share-coin{
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:#363636;
+    line-height:22px;
+}
+.return-logo{
+    margin-top: 5rpx;
+    margin-left: 20rpx;
+/*    margin-right: 30rpx;*/
+    width: 14rpx;
+    height: 30rpx;
+}
+
+/*金币任务*/
+.devider-line{
+    height: 15rpx;
+    background:rgba(241,241,241,1);
+}
+.coin-task{
+    width:750rpx;
+    height: 420rpx;
+    background-color: white;
+}
+.coin-task-logo{
+    width:10rpx;
+    height:40rpx;
+    margin-left: 30rpx;
+    margin-right: 15rpx;
+    margin-top: 20rpx;
+}
+.coin-task-title{
+    font-size:16px;
+    font-family:PingFangSC-Regular;
+    font-weight:600;
+    color:rgba(0,0,0,1);
+    line-height:12px;
+    margin-top: 20rpx;
+}
+.coin-task-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.coin-task-logo{
+    width:10rpx;
+    height:30rpx;
+    margin-left: 30rpx;
+}
+.coin-task-one{
+    width: 690rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #DADADA 2rpx solid;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+.coin-task-two{
+    width: 690rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #DADADA 2rpx solid;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+.coin-task-item{
+    display: block;
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    color:rgba(54,54,54,1);
+    line-height:20px;
+    margin-bottom: 5rpx;
+}
+.coin-task-detail{
+    display: block;
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:17px;
+    margin-bottom: 20rpx;
+}
+.coin-return-logo{
+    margin-top: 5rpx;
+    margin-left: 20rpx;
+    width: 14rpx;
+    height: 30rpx;
+}
+/*邀请好友*/
+.coin-task-three{
+    width: 100%;
+    height: 83rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*margin-left: 30rpx;
+    margin-top: 20rpx;*/
+    margin-bottom: 20rpx;
+    background-color: white;
+}
+.coin-task-three::after{
+    border: none;
+}
+.coin-task-invite{
+    display: block;
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    color:rgba(54,54,54,1);
+    line-height:20px;
+    margin-bottom: 5rpx;
+    text-align: left;
+}
+.invite-btn{
+    /*background-color: white;*/
+    /*width:250rpx;
+    height: 75rpx;*/
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    margin-right: 6rpx;
+}
+.invite-btn-count{
+    color:#0176FF;
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    line-height:22px;
+    margin-right: 10rpx;
+}
+.invite-btn-coin{
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:#363636;
+    line-height:22px;
+}
+.invite-btn-logo{
+    margin-top: 5rpx;
+    margin-left: 20rpx;
+    width: 14rpx;
+    height: 30rpx;
+}
+/*金币换购*/
+.coin-change{
+    width: 750rpx;
+    height: 600rpx;
+    background-color: white;
+}
+.coin-change-logo{
+    width:10rpx;
+    height:32rpx;
+    margin-left: 30rpx;
+    margin-right: 15rpx;
+    margin-top: 20rpx;
+}
+.coin-change-title{
+    font-size:16px;
+    font-family:PingFangSC-Regular;
+    font-weight:600;
+    color:rgba(0,0,0,1);
+    line-height:12px;
+    margin-top: 20rpx;
+}
+
+.item-layout {
+    width: 616rpx;
+    height: 228rpx;
+    margin-top: 36rpx;
+    margin-left: 68rpx;
+    border: #C7C7C7 0.5rpx solid;
+    position: relative;
+}
+
+.item-layout-head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 8rpx;
+    justify-content: space-between;
+    font-size: 28rpx;
+    z-index: 1;
+    position: absolute;
+}
+.product-name{
+    font-size:28rpx;
+    font-family:PingFangTC-Medium;
+    font-weight:600;
+    color:rgba(0,0,0,1);
+    line-height:40rpx;
+}
+.product-pic {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+/* .item-layout .product-pic {
+    width: 100%;
+} */
+
+.product-name {
+    margin-left: 16rpx;
+}
+
+.price {
+    margin-right: 16rpx;
+}

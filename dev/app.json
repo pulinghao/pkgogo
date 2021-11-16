@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rank/rank",
+    "pages/up_clock/clocklist",
+    "pages/up_clock/detail",
+    "pages/logs/logs",
+    "pages/game/detail",
+    "pages/user/usercenter",
+    "pages/market/market",
+    "pages/market/redemptiondetail",
+    "pages/mypoints/mypoints",
+    "pages/test",
+    "pages/pk_detail/competition",
+    "pages/pk_detail/comment",
+    "pages/comment/clock",
+    "pages/comment/comment",
+    "pages/myclock/myclock"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2B2C3A",
+    "navigationBarTitleText": "趣PK",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "images/game.png",
+        "selectedColor": "#0278FF",
+        "text": "PK广场",
+        "iconPath": "images/game.png"
+      },
+      {
+        "pagePath": "pages/user/usercenter",
+        "text": "我的",
+        "selectedIconPath": "images/user.png",
+        "iconPath": "images/user.png",
+        "selectedColor": "#0278FF"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,31 @@
+<!-- 已经投票后的视图 -->
+<!-- <voted-view left-text="左边文字" left-percent="80" left-num="30" 
+            right-text="右边文字" right-percent="40" right-num="50"></voted-view> -->
+<view voted-view>
+    <view class="vote-text-container">
+        <text class="left-text-voted">{{leftText}}</text>
+        <text class="right-text-voted">{{rightText}}</text>
+    </view>
+
+    <view class="vote-rate-container">
+        <view class="left-part">
+            <view class="left-part-bar" style="width:{{leftPercent}}%"></view>
+            <block wx:if="{{(userOptionIndex == 1) &&(compResult == 1)}}">
+              <image src='../../images/win_icon.png' mode='aspectFit' class='left-win-img'></image>
+            </block>
+            <block wx:if="{{(userOptionIndex == 1) &&(compResult == 2)}}">
+            <image src='../../images/fail_icon.png' mode='aspectFit' class='left-fail-img'></image>
+            </block>
+        </view>
+        <image class="vote-vs-icon" src="/images/vs.png"></image>
+        <view class="right-part">
+            <view class="right-part-bar" style="width:{{rightPercent}}%"></view>
+            <block wx:if="{{(userOptionIndex == 2) &&(compResult == 2)}}">
+              <image src='/images/win_icon.png' mode='aspectFit' class='right-win-img'></image>
+            </block>
+            <block wx:if="{{(userOptionIndex == 2) &&(compResult == 1)}}">
+            <image src='../../images/fail_icon.png' mode='aspectFit' class='right-fail-img'></image>
+            </block>
+        </view>
+    </view>
+</view>

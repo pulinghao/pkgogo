@@ -1,0 +1,36 @@
+<!-- pages/mypoints/mypoints.wxml    历史金币-->
+<view class="body">
+    <scroll-view scroll-y="true">
+        <view class="header">
+            <text class="remaining-points-label">PK币余额</text>
+            <view class="pk-num-container">
+                <view class="pk-num">{{allMoney}}</view>
+                <image class="user-info-pk-icon" src="/components/userinfoview/images/pk-icon.png"></image>
+            </view>
+        </view>
+        <block wx:if="{{historyList.length > 0}}">
+            <block wx:for="{{historyList}}" wx:for-item="dayItems">
+                <view class="item-layout">
+                    <view class="time-container">
+                        <text>{{dayItems.date}}</text>
+                    </view>
+                </view>
+                <block wx:if="{{dayItems.pklist.length > 0}}">
+                    <block wx:for="{{dayItems.pklist}}" wx:for-item="recordItem">
+                        <view class="record-content">
+                            <text class="record-content-detail">{{recordItem.title}}（{{recordItem.joinNum}}人完成，积分池总计{{recordItem.poolMoney}}）</text>
+                            <view class="points-detail">
+                                <text wx:if="{{recordItem.moneyChange >= 0}}" class="points-detail-in">{{recordItem.moneyChange}}分</text>
+                                <text wx:else class="points-detail-out">{{recordItem.moneyChange}}分</text>
+                            </view>
+                        </view>
+                    </block>
+                </block>
+            </block>
+        </block>
+        <!-- 没有积分记录的提示 -->
+        <block wx:else>
+            <view class="empty-points-history">您还没有积分记录</view>
+        </block>
+    </scroll-view>
+</view>

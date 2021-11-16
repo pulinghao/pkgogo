@@ -1,0 +1,609 @@
+/* pages/up_clock/clocklist.wxss */
+@import "../../template/authLogin/authLoginManager.wxss";
+
+page{
+    background-color: #EDEDED;
+}
+.header{
+    background-color: white;
+    width: 100%;
+   /* height: 400rpx;*/
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+头部banner
+*/
+.clock-card-banner{
+    width: 688rpx;
+    height: 200rpx;
+    margin-left: 30rpx;
+    /*background-color: rgba(220, 220, 220, 0.8);*/
+    margin-bottom: 20rpx;
+    box-shadow: 20rpx rgba(0, 0, 0, 0.11);
+ }
+.banner-content{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+}
+.banner-title{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+    margin-top: 20rpx;
+    margin-bottom: 10rpx;
+}
+.banner-text{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    margin-bottom: 20rpx;
+   /* margin-right: 20rpx;*/
+}
+.banner-bg-img{
+    position: absolute;
+    width:688rpx;
+    height: 200rpx;
+}
+/*
+打卡列表主体
+*/
+.clock-body{
+    width: 100%;
+    background-color: white;
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20rpx;
+}
+.clock-content-container{
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+    margin-right: 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+.clock-userinfo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.clock-userinfo{
+    display: flex;
+    flex-direction: row;
+}
+.userinfo-img{
+    width: 68rpx;
+    height: 68rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+.userinfo{
+    display: flex;
+    flex-direction: column;
+}
+.userinfo-name{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+}
+.clock-time{
+    font-size:22rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+}
+.clock-contiDay{
+    width:178rpx;
+    height:56rpx;
+    background-color:rgba(255,67,0,0.0654);
+    border-radius:10rpx;
+    text-align: center;
+}
+.clock-contiDay-text{
+    font-size:22rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    letter-spacing: 2rpx;
+    line-height: 56rpx;
+}
+.clock-contiDay-count{
+    font-size:22rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:#FF4300;
+    letter-spacing: 4rpx;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+}
+.content-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+    /*line-height:40rpx;*/
+    margin-bottom: 20rpx;
+}
+.img-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 20rpx;
+}
+.clock-img-bg{
+    width:220rpx;
+    height:138rpx;
+    background:rgba(237,237,237,1);
+    margin-right: 10rpx;
+}
+.clock-img{
+    width:220rpx;
+    height:138rpx;
+}
+.share-comment-like{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+.share-container{
+    /*display: flex;
+    flex-direction: row;*/
+    display: flex;
+    flex-direction: row;
+    width: 100rpx;
+    height: 50rpx;
+    text-align: center;
+}
+.share-button{
+    background: transparent;
+    width: 100rpx;
+    height: 50rpx;
+    position: absolute;
+    z-index: 1;
+}
+.shre-text{
+    font-size:22rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    margin-left: 10rpx;
+    text-align: center;
+}
+input{
+    outline:none;
+    border:none;
+    list-style: none;
+}
+button::after{
+    border:none;
+}
+.comment-container{
+    display: flex;
+    flex-direction: row;
+    width: 100rpx;
+    height: 50rpx;
+    margin-top: 5rpx;
+    text-align: center;
+}
+.like-container{
+    display: flex;
+    flex-direction: row;
+    width: 100rpx;
+    height: 50rpx;
+    margin-top: 5rpx;
+    text-align: center;
+}
+.share-comment-like-img{
+    width: 40rpx;
+    height: 36rpx;
+    margin: 0 auto;
+}
+.share-comment-like-Img{
+    width: 40rpx;
+    height: 36rpx;
+}
+
+.shre-comment-like-text{
+    font-size:22rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(50,50,50,1);
+    margin-left: 10rpx;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 36rpx;
+    margin-top: 3rpx;
+}
+/*
+热门评论
+*/
+.hot-comment{
+    width:686rpx;
+    /*height:240rpx;*/
+    background:rgba(237,237,237,1);
+    /*background-color: white;*/
+    margin-bottom: 30rpx;
+}
+.hot-comment-content{
+    margin-left: 20rpx;
+}
+.hot-comment-icon{
+    position: relative;
+    z-index: 1;
+    float: right;
+    width: 108rpx;
+    height: 80rpx;
+}
+
+.content-username{
+    font-size:26rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:600;
+    color:rgba(50,50,50,1);
+}
+.content-text{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+}
+.hot-comment-imgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+}
+.commnet-img-container{
+    width:100rpx;
+    height:100rpx;
+    border-radius:6rpx;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+.comment-img{
+    width:100rpx;
+    height:100rpx;
+}
+.blank{
+    width: 100%;
+    height: 75rpx;
+}
+.navigator-style{
+    background-color: white;
+}
+/*
+是否参加打卡活动弹窗
+*/
+.qpk-modal-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    /*right: 0;*/
+    top: 0;
+    /*bottom: 0;*/
+    /*background-color: #0000007F;*/
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.qpk-modal {
+    width: 600rpx;
+    height: 428rpx;
+    margin-top: 234rpx;
+    background-color: #FFFFFF;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    border-radius: 14rpx;
+}
+
+.qpk-modal-title {
+    font-size: 36rpx;
+    margin-top: 50rpx;
+    text-align: center;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(65,65,65,1);
+}
+
+.qpk-modal-coin {
+    margin-top: 46rpx;
+    font-size: 32rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(62,62,62,1);
+    line-height:55rpx;
+    text-align: center;
+   /* display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;*/
+}
+.qpk-modal-date{
+    font-size:28rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(62,62,62,1);
+    text-align: center;
+    line-height: 55rpx;
+    margin-bottom: 30rpx;
+}
+.confirm-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#qpk-modal-confirm-btn {
+    width: 240rpx;
+    height: 70rpx;
+    /*margin-top: 20rpx;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    background-color: #FF003C;
+    color: #FFFFFF;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+   /* margin-top: 40rpx;*/
+}
+.qpk-modal-confirm-btn {
+    width: 240rpx;
+    height: 70rpx;
+    /*margin-top: 20rpx;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    background-color: #FF003C;
+    color: #FFFFFF;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+    /* margin-top: 40rpx;*/
+}
+.qpk-coinlack-modal{
+    width: 600rpx;
+    height: 548rpx;
+    margin-top: 234rpx;
+    background-color: #FFFFFF;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    border-radius: 14rpx;
+}
+.coin_lack_img{
+    width: 160rpx;
+    height: 144rpx;
+    margin-left: 222rpx;
+    margin-top: 70rpx;
+}
+.qpk-modal-content{
+    margin-top: 46rpx;
+    font-size: 36rpx;
+    color: #3E3E3E;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    line-height: 60rpx;
+    margin-bottom: 25rpx;
+}
+.clock_success_img{
+    width: 310rpx;
+    height: 200rpx;
+    margin-top: 20rpx;
+    margin-left: 150rpx;
+}
+.qpk-clock-success{
+    color: red;
+}
+.qpk-clock-success{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+.qpk-success-text{
+    font-size: 36rpx;
+    color: #3E3E3E;
+    line-height: 60rpx;
+    text-align: center;
+/*    margin-left: 150rpx;*/
+}
+.qpk-clock-success{
+    font-size: 36rpx;
+    color: red;
+    line-height: 60rpx;
+    text-align: center;
+    margin-bottom: 15rpx;
+}
+.clock_failure_img{
+    width: 128rpx;
+    height: 128rpx;
+    margin-left: 222rpx;
+    margin-top: 60rpx;
+}
+
+.activity-modal-mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    /*right: 0;*/
+    top: 0;
+   /* bottom: 0;*/
+    /*background-color: #0000007F;*/
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.activity-modal-container{
+    width: 600rpx;
+    height: 900rpx;
+    margin-top: 100rpx;
+    background-color: #FFFFFF;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    border-radius: 14rpx;
+}
+.activity-mask-img{
+    width: 600rpx;
+    height: 222rpx;
+    position: absolute;
+}
+.userinfo-container{
+    position: relative;
+    z-index: 1;
+    margin-top: 155rpx;
+    display: flex;
+    flex-direction: column;
+}
+.user-img{
+    margin-left: 220rpx;
+    width: 148rpx;
+    height: 148rpx;
+    border-radius: 50%;
+}
+.username-text{
+    font-size:28rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(65,65,65,1);
+    line-height:42rpx;
+    margin-top: 10rpx;
+    text-align: center;
+}
+.activity-container{
+    position: absolute;
+    width: 530rpx;
+    height: 324rpx;
+    margin-left: 35rpx;
+    margin-top:395rpx;
+}
+.content-img{
+    position: absolute;
+    width: 530rpx;
+    height: 324rpx;
+    margin-bottom: 20rpx;
+}
+.activity-time{
+    position: relative;
+    z-index: 1;
+    font-size:24rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color: #FFFFFF;
+    margin-left: 185rpx;
+    margin-top: 50rpx;
+}
+.activity-detail{
+    width:500rpx;
+    height:78rpx;
+     position: relative;
+     z-index: 1;
+     font-size:28rpx;
+     font-family:PingFangSC-Regular;
+     font-weight:400;
+     color:rgba(65,65,65,1);
+     text-align: center;
+     line-height:45rpx;
+    margin-top: 50rpx;
+    margin-left: 50rpx;
+ }
+.activity-supplement{
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(65,65,65,1);
+    line-height:36rpx;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.activity-win-container{
+    font-size:32rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:bold;
+    color:rgba(65,65,65,1);
+    line-height:24rpx;
+    text-align: center;
+    margin-top: 40rpx;
+}
+.activity-win{
+    font-size:32rpx;
+    font-family:PingFangSC-Medium;
+    font-weight:bold;
+    color:red;
+    line-height:24rpx;
+}
+.activity-btn-container{
+    margin-top: 70rpx;
+    margin-left: 160rpx;
+}
+.activity-win-upImg{
+    width: 16rpx;
+    height: 28rpx;
+}
+.activity-mask-title-text{
+    position: absolute;
+    z-index: 1;
+    font-size:40rpx;
+    font-family:AlibabaPuHuiTiB;
+    color:rgba(255,255,255,1);
+    line-height:24rpx;text-align: center;
+    text-align: center;
+    margin-top: 70rpx;
+    margin-left: 140rpx;
+}
+
+
+/*悬浮返回首页得按钮*/
+.float-button{
+    position: fixed;
+    /*margin-bottom: 20rpx;*/
+    margin-left: 600rpx;
+    margin-top: 350rpx;
+    width: 102rpx;
+    height: 98rpx;
+}
+.float-button-img{
+    width: 102rpx;
+    height: 98rpx;
+}

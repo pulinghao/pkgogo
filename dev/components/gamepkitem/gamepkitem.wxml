@@ -1,0 +1,32 @@
+<!--components/gamepkitem/gamepkitem.wxml-->
+<block wx:if="{{itemData.seal==false}}">
+    <view class="gamepk-item-container" data-item='{{itemData}}' bindtap='goDetailPage'>
+        <view class="top-item-container">
+            <text class="game-option">{{itemData.option1}}</text>
+            <text class="game-option">VS</text>
+            <text class="game-option">{{itemData.option2}}</text>
+        </view>
+        <view class="foot-item-container">
+            <text class="foot-text">{{remainingTime}}</text>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="gamepk-item-container-end">
+        <view class="top-item-container-end">
+            <text class="game-title">{{itemData.title}}</text>
+        </view>
+        <block wx:if="{{itemData.settle==false}}">
+            <view class="foot-item-container-end">
+                <text class="game-result">已封盘</text>
+            </view>
+        </block>
+        <block wx:if="{{itemData.settle==true}}">
+            <view class="foot-item-container-end">
+                <text class="game-result">胜负已分出</text>
+            </view>
+        </block>
+    </view>
+</block>
+
+

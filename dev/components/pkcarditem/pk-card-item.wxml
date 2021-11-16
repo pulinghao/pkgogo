@@ -1,0 +1,43 @@
+<view class="pk-card-item" data-item='{{itemData}}' bindtap='goDetailPage'>
+  <view class="title-container">
+    <view class="main-title-contianer">
+      <text class="pk-card-title">{{itemData.title}}</text>
+      <block wx:if="{{itemData.joinIn}}">
+        <text class="join-state">已参与</text>
+      </block>
+    </view>
+    <text class="pk-card-subtitle">{{itemData.remark}}</text>
+  </view>
+  <image class="pk-card-image" src="{{itemData.img}}" mode="aspectFill"></image>
+  <view class="time-join-num-container">
+    <!-- 进行中 -->
+    <view wx:if="{{!itemData.seal}}" class="remaining-time-container">
+      <image class="remaing-time-bg remaining-progress-bg" src="/components/pkcarditem/images/remaining-progress-bg.png"></image>
+      <view class="remaining-text-container">
+        <text class="remaining-time">还剩</text>
+        <text class="remaining-time remaining-time-text">{{remainingTime}}</text>
+      </view>
+    </view>
+    <!-- 已封盘 -->
+    <view wx:elif="{{itemData.seal && !itemData.settle}}" class="remaining-time-container">
+      <image class="remaing-time-bg remaining-seal-bg" src="/components/pkcarditem/images/remaining-seal-bg.png"></image>
+      <text class="remaining-time remaining-text-container">{{remainingTime}}</text>
+    </view>
+    <!-- 胜负已分 -->
+    <view wx:elif="{{itemData.settle}}" class="remaining-time-container">
+      <image class="remaing-time-bg remaining-settle-bg" src="/components/pkcarditem/images/remaining-settle-bg.png"></image>
+      <text class="remaining-time remaining-text-container">{{remainingTime}}</text>
+    </view>
+    <text class="pay-money">参与需投入 {{itemData.payMoney}} PK币</text>
+  </view>
+  <view class="devide-line"></view>
+  <view class="time-join-container">
+    <text class="deadline">{{deadline}}</text>
+    <view class="join-num-container">
+      <image class="people-icon" src="/components/pkcarditem/images/join-people-icon.png"></image>
+      <text class="join-number">{{itemData.joinNum}}</text>
+      <image class="up-icon" mode="aspectFit" src="/components/pkcarditem/images/up-icon.png" />
+      <text class="join-text">人参与</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,123 @@
+<!--pages/game/detail.wxml-->
+<view class='head'>
+  <view class='item-layout' bindtap='goDetailPage' data-item='{{item}}'>
+    <!-- item 头部图片 -->
+    <view class='item-head'>
+      <image src='{{item.img}}' mode='scaleToFill'></image>
+      <button class='share-view' formType="submit" open-type='share'>邀请好友送{{item.share_money}}PK币</button>
+      
+      <!-- 邀请好友赠积分 -->
+      
+    </view>
+    <!-- item 身体部分 -->
+
+    <view class='item-body'>
+      <view class='first-line'>
+        <view class='left'>
+          <text class='title'>
+            {{item.title}}
+          </text>
+        </view>
+        <view class='right'>
+          <text class='pingfen'>
+            完成者平分所有PK币
+          </text>
+        </view>
+      </view>
+      <view class='second-line'>
+        <view class='left'>
+          <text class='answer'>
+            本期积分奖励
+          </text>
+        </view>
+        <view class='right'>
+          <text class='number'>
+            {{item.pay_money}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='body'>
+  <view class='title'>
+    <image class='award-icon' src='../../images/award_icon.png' mode='aspectFit'></image>
+    <text class='guize'>PK规则</text>
+  </view>
+  <view class='subtitle'>
+  <rich-text class='zhengwen' nodes="{{item.pk_rules_main}}" bindtap="tap"></rich-text>
+    <!-- <text class='zhengwen'>{{item.pk_rules_main}}</text> -->
+  </view>
+
+  <!-- <view wx:for="{{instructions}}" class='instructions' wx:for-item="eachrule">
+    <text class='xiaoguize'>·{{eachrule}}</text>
+  </view> -->
+
+</view>
+
+<view class='result'>
+  <view class='title'>
+    <text class='saiguo'>昨日赛果</text>
+  </view>
+  <view class='color-bar'>
+    <view class='left-color-bar' style='width:{{(pk_stat.pk_finish_percent)}}%'></view>
+    <view class='right-color-bar' style='width:{{((pk_stat.pk_unfinish_percent))}}%'></view>
+  </view>
+  <view class='rate-text'>
+    <view class='left-rate-text'>
+      达成{{pk_stat.pk_finish_num}}（{{pk_stat.pk_finish_percent}}%）
+    </view>
+    <view class='right-rate-text'>
+      未达成{{pk_stat.pk_unfinish_num}}（{{pk_stat.pk_unfinish_percent}}%）
+    </view>
+  </view>
+</view>
+
+<view class='tabbar'>
+  <view class='left-bar'>
+    <view class='text-bar'>
+      <text class='top-line'>每日花费:{{fee}}</text>
+      <text class='bottom-line'>今日总额:{{item.pay_money}}</text>
+    </view>
+  </view>
+
+  <view class='right-bar' style='background:{{rightBarColor}}'>
+    <text class='right-bar-text' bindtap='onClickJoin'>{{rightBarText}}</text>
+  </view>
+</view>
+
+<!-- 蒙层 -->
+
+<view>
+  <view class="zhezao" hidden="{{!flag}}">
+    <view class="t_w">
+      <!--弹出框开始-->
+      <view class="tanchu_view">
+        <view>
+          <view class="title">是否参与</view>
+          <view class='subtitle'>
+            <view class='left'>当前积分:{{myMondey}}</view>
+            <view class='right'>当前花费:{{fee}}</view>
+          </view>
+          <view class="main">
+            <view wx:for="{{instructions}}" class='instructions'>
+              <text class='xiaoguize'>{{item}}</text>
+            </view>
+          </view>
+          <!--确定开始-->
+          <view class="btn-area">
+            <view class='left' bindtap='onClickCancel'>
+            取消
+            </view>
+            <view class='right' bindtap='onClickConfirm'>
+            确认参与
+            </view>
+          </view>
+          <!--确定结束-->
+        </view>
+      </view>
+      <!--弹出框结束-->
+    </view>
+  </view>
+</view>

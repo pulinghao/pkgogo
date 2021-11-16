@@ -1,0 +1,203 @@
+<!--pages/user/usercenter.wxml   用户个人中心-->
+<import src="../../template/authLogin/authLoginManager.wxml"/>
+
+<view class='body'>
+    <scroll-view scroll-y='true' class='swiper-box' bindscrolltolower="onScrollToLower">
+        <!-- 用户信息 -->
+        <view class='header'>
+            <!-- 用户信息 -->
+            <view class='user-info'>
+                <image class='avator' src="{{headImg}}" mode="cover"></image>
+                <view class='nickname'>{{nickName}}</view>
+            </view>
+            <!-- PK币 -->
+            <view class='coin-part' bindtap='goMyPointsPage'>
+                <view class="pk-num-container">
+                    <view class='pk-num'>{{AllMoney}}</view>
+                    <image class="user-info-pk-icon" src="/components/userinfoview/images/pk-icon.png"></image>
+                </view>
+                <view class='pk'>PK币</view>
+            </view>
+            <!-- 金币商城 -->
+            <view class='common-question-layout' bindtap='goMarketPage'>
+                <view class='common-question'>
+                    <image class='market_icon' src='/components/userinfoview/images/shop.png'></image>
+                    <view class='text'>金币商城</view>
+                </view>
+            </view>
+        </view>
+        <view class="clock-blank"></view>
+        <view class="body-container">
+            <view class="nav-container">
+                <view bindtap="activeNav" data-index="{{index}}"
+                      class="nav-item {{index==currentIndexNav ? 'active' : ''}}" wx:for="{{navList}}"
+                      wx:key="{{index}}">
+                    <text class="list-title">{{item}}</text>
+                </view>
+            </view>
+            <block wx:if="{{currentIndexNav===1}}">
+                <block wx:if="{{mypkList.length > 0}}">
+                    <block wx:for="{{mypkList}}" wx:key="index" wx:for-item="dayItems">
+                        <block wx:if="{{dayItems.settle == true}}">
+                            <pk-result-card-view title='{{dayItems.title}}' remark='{{dayItems.remark}}'
+                                                 money='{{dayItems.poolMoney}}'
+                                                 people='{{dayItems.joinNum}}' win='{{dayItems.win}}'
+                                                 bind:onclickdetail='goDetailPage'
+                                                 data-item='{{dayItems}}'>
+                            </pk-result-card-view>
+                            <view class='foot-part'>
+                                <text class='title-part'>昨日完成情况:</text>
+                                <view class='status'>
+                                    <text wx:if="{{dayItems.moneyChange >= 0}}" class="points-detail-in">
+                                        胜利{{dayItems.moneyChange}}分
+                                    </text>
+                                    <text wx:else class="points-detail-out">失败{{dayItems.moneyChange}}分</text>
+                                </view>
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <pk-result-card-view title='{{dayItems.title}}' remark='{{dayItems.remark}}'
+                                                 money='{{dayItems.poolMoney}}'
+                                                 people='{{dayItems.joinNum}}' win='{{dayItems.win}}'
+                                                 bind:onclickdetail='goDetailPage'
+                                                 data-item='{{dayItems}}'>
+                            </pk-result-card-view>
+                            <view class='foot-part'>
+                                <text class='title-part'>请耐心等待结算</text>
+                            </view>
+                        </block>
+                    </block>
+                    <view class='no-more-layout'>
+                        <!-- <image class='icon' src='../../images/main-no-more.png'> </image> -->
+                        <view class='end-text'>没有更多了..</view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <no-data title="去竞猜"></no-data>
+                </block>
+            </block>
+            <block wx:else>
+                <block wx:if="{{myClockList.length > 0}}">
+                    <block wx:for="{{myClockList}}" wx:key="index" wx:for-item="dayItems">
+                        <view class="clock-body">
+                            <view class="clock-content-container">
+                                <view>
+                                    <view class="clock-userinfo-container">
+                                        <view class="clock-userinfo">
+                                            <image class="userinfo-img" src="{{dayItems.head}}"></image>
+                                            <view class="userinfo">
+                                                <text class="userinfo-name">{{dayItems.name}}</text>
+                                                <text class="clock-time">{{dayItems.date}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="clock-contiDay">
+                                            <text class="clock-contiDay-text">打卡第</text>
+                                            <text class="clock-contiDay-count">{{dayItems.continueNum }}</text>
+                                            <text class="clock-contiDay-text">天</text>
+                                        </view>
+                                    </view>
+                                    <view class="content-container">
+                                        <navigator
+                                                url="../up_clock/detail?discussid={{dayItems.id}}&pageIndex=1&size={{size}}"
+                                                data-item='{{dayItems}}' hover-class='navigator-style'>
+                                            <text class="content-text">
+                                                {{dayItems.content }}
+                                            </text>
+                                        </navigator>
+                                        <block wx:if="{{dayItems.imgs.length>0}}">
+                                            <view class="img-container">
+                                                <block wx:for="{{dayItems.imgs}}" wx:key="index" wx:for-item="items">
+                                                    <view class="clock-img-bg" bindtap="previewImage"
+                                                          data-list="{{dayItems.imgs}}" data-src="{{items}}">
+                                                        <image class="clock-img" src="{{items}}"
+                                                               mode="aspectFill"></image>
+                                                    </view>
+                                                </block>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                                <view class="share-comment-like">
+                                    <view class="share-container">
+                                        <view class="share-container" bindtap="goClockDetail"
+                                              data-punchid="{{dayItems.punchid}}">
+                                            <!--<button open-type="share" class="share-button"></button>
+                                            <image class="share-comment-like-img" src="../../images/icon_share.png" mode="scaleToFill"></image>-->
+                                            <text class="from-location-text">来自“{{dayItems.punchname }}”></text>
+                                        </view>
+                                    </view>
+                                    <view class="comment-container" bindtap="goComment" data-index="{{dayItems.id}}"
+                                          data-item="{{dayItems.discussNum}}">
+                                        <image class="share-comment-like-img"
+                                               src="../../images/icon_comment_clock.png"></image>
+                                        <block wx:if="{{dayItems.discussNum>0}}">
+                                            <text class="shre-comment-like-text">{{dayItems.discussNum}}</text>
+                                        </block>
+                                        <block wx:else>
+                                            <text class="shre-comment-like-text">评论</text>
+                                        </block>
+                                    </view>
+                                    <view class="like-container">
+                                        <block wx:if="{{dayItems.isLike==false}}">
+                                            <image class="share-comment-like-img" src="../../images/icon_like_white.png"
+                                                   bindtap="goLike" data-index="{{dayItems.id}}"
+                                                   data-mark="{{dayItems.isLike}}"></image>
+                                        </block>
+                                        <block wx:if="{{dayItems.isLike==true}}">
+                                            <image class="share-comment-like-img" src="../../images/icon_like.png"
+                                                   bindtap="goLike" data-index="{{dayItems.id}}"
+                                                   data-mark="{{dayItems.isLike}}"></image>
+                                        </block>
+                                        <block wx:if="{{dayItems.likeNum>0}}">
+                                            <text class="shre-comment-like-text">{{dayItems.likeNum}}</text>
+                                        </block>
+                                        <block wx:else>
+                                            <text class="shre-comment-like-text">点赞</text>
+                                        </block>
+                                    </view>
+                                </view>
+                                <block wx:if="{{dayItems.discussList.length >0}}">
+                                    <view class="hot-comment">
+                                        <image class="hot-comment-icon" src="../../images/icon_hotcomment.png"></image>
+                                        <view class="hot-comment-content">
+                                            <text class="content-username">{{dayItems.discussList[0].name}}</text>
+                                            <text class="content-text"> {{dayItems.discussList[0].content}}</text>
+                                        </view>
+                                        <block wx:if="{{dayItems.discussList[0].imgs.length>0}}">
+                                            <view class="hot-comment-imgs">
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[0]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[0]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[1]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[1]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[2]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[2]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="clock-blank"></view>
+                        </view>
+                    </block>
+                </block>
+                <block wx:else>
+                    <no-data title="去打卡"></no-data>
+                </block>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+<template is="authLoginManager" data="{{...item}}">
+</template>

@@ -1,0 +1,6 @@
+<!--评论条-->
+<view class='comment-slide'>
+  <image class='user-img'src='{{imgUrl}}' mode='aspectFit'></image>
+  
+  <text class='comment-txt'>{{slideText}}</text>
+</view>

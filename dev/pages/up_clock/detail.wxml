@@ -1,0 +1,124 @@
+<!--pages/up_clock/detail.wxml    他人PK详情页-->
+<scroll-view scroll-y='true'>
+    <view class="header">
+        <view class="comment-detail">
+            <text class="comment-content">
+                {{dataList.content}}
+            </text>
+            <block wx:if="{{dataList.imgs.length>0}}">
+                <view class="comment-imgs-container">
+                    <blcok wx:for="{{dataList.imgs}}" wx:key="index" wx:for-item="items">
+                        <view class="comment-img" bindtap="previewImage" data-list="{{dataList.imgs}}" data-src="{{items}}">
+                            <image class="comment-img-detail" src="{{items}}" mode="aspectFill"></image>
+                        </view>
+                    </blcok>
+                    <!--<view class="comment-img">
+                        <image class="comment-img-detail" src="{{dataList.imgs[0]}}"></image>
+                    </view>
+                    <view class="comment-img">
+                        <image class="comment-img-detail" src="{{dataList.imgs[1]}}"></image>
+                    </view>
+                    <view class="comment-img">
+                        <image class="comment-img-detail" src="{{dataList.imgs[2]}}"></image>
+                    </view>-->
+                </view>
+            </block>
+            <view class="comment-user">
+                <view class="comment-user-container">
+                    <view class="comment-user-img">
+                        <image class="user-img" src="{{dataList.head}}"></image>
+                    </view>
+                    <text class="comment-user-name">{{dataList.name}}</text>
+                    <text class="comment-submit">发布</text>
+                </view>
+                <view class="clock-time">
+                    <text class>{{dataList.date}}</text>
+                </view>
+            </view>
+            <view class="comment-like">
+                <view class="comment-llike-container" bindtap="goComment" data-index="{{dataList.id}}">
+                    <image class="share-comment-like-img" src="../../images/icon_comment_clock.png"></image>
+                    <block wx:if="{{dataList.discussNum>0}}">
+                        <text class="shre-comment-like-text">{{dataList.discussNum}}</text>
+                    </block>
+                    <block wx:else>
+                        <text class="shre-comment-like-text">评论</text>
+                    </block>
+                </view>
+                <view class="comment-llike-container">
+                    <block wx:if="{{dataList.isLike==false}}">
+                        <image class="share-comment-like-img" src="../../images/icon_like_white.png" bindtap="goLike" data-index="{{dataList.id}}" data-mark="{{dataList.isLike}}"></image>
+                    </block>
+                    <block wx:if="{{dataList.isLike==true}}">
+                        <image class="share-comment-like-img" src="../../images/icon_like.png" bindtap="goLike" data-index="{{dataList.id}}" data-mark="{{dataList.isLike}}"></image>
+                    </block>
+                    <block wx:if="{{dataList.likeNum>0}}">
+                        <text class="shre-comment-like-text">{{dataList.likeNum}}</text>
+                    </block>
+                    <block wx:else>
+                        <text class="shre-comment-like-text">点赞</text>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="body">
+        <block wx:if="{{dataList.discussList.length>0}}">
+            <block wx:for="{{dataList.discussList}}" wx:key="index" wx:for-item="items">
+                <view class="comment-container">
+                    <view class="comment-user">
+                        <view class="comment-user-container">
+                            <view class="comment-user-img">
+                                <image class="user-img" src="{{items.head}}"></image>
+                            </view>
+                            <text class="comment-user-name">{{items.name}}</text>
+                        </view>
+                        <view class="comment-likeNum">
+                            <block wx:if="{{items.isLike==false}}">
+                                <block wx:if="{{items.likeNum>0}}">
+                                    <text class="comment-likeNum-count">{{items.likeNum}}</text>
+                                </block>
+                                <block wx:else>
+                                    <text class="comment-likeNum-count">点赞</text>
+                                </block>
+                                <image class="comment-likeNum-img" src="../../images/icon_like_white.png" bindtap="goLike" data-index="{{items.id}}" data-mark="{{items.isLike}}"></image>
+                            </block>
+                            <block wx:if="{{items.isLike==true}}">
+                                <block wx:if="{{items.likeNum>0}}">
+                                    <text class="comment-likeNum-count-like">{{items.likeNum}}</text>
+                                </block>
+                                <block wx:else>
+                                    <text class="comment-likeNum-count-like">点赞</text>
+                                </block>
+                                <image class="comment-likeNum-img" src="../../images/icon_like.png" bindtap="goLike" data-index="{{items.id}}" data-mark="{{items.isLike}}"></image>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="comment-content">
+                        <text class="comment-content-text">{{items.content}} </text>
+                    </view>
+                    <block wx:if="{{items.imgs.length>0}}">
+                        <view class="img-container">
+                            <block wx:for="{{items.imgs}}" wx:key="index" wx:for-item="item">
+                                <view class="clock-img-bg" bindtap="previewImage" data-list="{{items.imgs}}" data-src="{{item}}">
+                                    <image class="clock-img" src="{{item}}" mode="aspectFill"></image>
+                                </view>
+                            </block>
+                            <!--<view class="clock-img-bg">
+                                <image class="clock-img" src="{{dayItems.imgs[0]}}" mode="scaleToFill"></image>
+                            </view>
+                            <view class="clock-img-bg">
+                                <image class="clock-img" src="{{dayItems.imgs[1]}}" mode="scaleToFill"></image>
+                            </view>
+                            <view class="clock-img-bg" src="{{dayItems.imgs[2]}} " mode="scaleToFill">
+                            </view>-->
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </block>
+    </view>
+</scroll-view>
+
+

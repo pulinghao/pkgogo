@@ -1,0 +1,32 @@
+<!--component/pk-result-card/pk-result-card-view.wxml-->
+<view class='pk-result-card-view' bindtap='onClickDetail'>
+  <view class='main-part'>
+    <view class='item-title'>
+      {{title}}
+    </view>
+    <view class='answer'>
+        <block wx:if="{{win === 'true'}}">
+        <image class='answer-icon' src='../../images/win_icon.png' mode='aspectFit'></image>
+        </block>
+        <block wx:if="{{win === 'false'}}">
+        <image class='answer-icon' src='../../images/fail.png' mode='aspectFit'></image>
+        </block>
+        <block wx:if="{{win === ''}}">
+            <image class='answer-icon' src='../../images/null.png' mode='aspectFit'></image>
+        </block>
+    </view>
+  </view>
+
+  <view class='item-tail'>
+    <view class='award-part'>
+      <image class='award-icon' src='../../images/award_icon.png' mode='aspectFit'></image>
+      <text class='award-title'>奖金池金额</text>
+      <text class='award-num'>{{money}}</text>
+    </view>
+    <view class='people-part'>
+      <image class='people-icon' src='../../images/people_icon.png' mode='aspectFit'></image>
+      <text class='people-num'>{{people}}</text>
+      <text class='people-title'>人参与</text>
+    </view>
+  </view>
+</view>

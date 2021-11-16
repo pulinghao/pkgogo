@@ -1,0 +1,8 @@
+<!--components/sharebutton/share-button.wxml-->
+<view class='share-button'>
+  <button class='share-real-button' open-type='share'></button>
+  <view class='bg-view'>
+    <image class='share-image' src='/images/share.png' mode='aspectFit'></image>
+    <text class='share-text'>分享</text>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class='header'>
+  <!-- 用户信息 -->
+  <view class='user-info'>
+    <image class='avator' src="{{headImg}}" mode="cover"></image>
+    <view class='nickname'>{{nickName}}</view>
+  </view>
+  <!-- PK币 -->
+  <view class='coin-part' bindtap='goMyPointsPage'>
+    <view class="pk-num-container">
+      <view class='pk-num'>{{money}}</view>
+      <image class="user-info-pk-icon" src="/components/userinfoview/images/pk-icon.png"></image>
+    </view>
+    <view class='pk'>PK币</view>
+  </view>
+  <!-- 金币商城 -->
+  <view class='common-question-layout' bindtap='goMarketPage'>
+    <view class='common-question'>
+      <image class='icon' src='/components/userinfoview/images/shop.png'></image>
+      <view class='text'>金币商城</view>
+    </view>
+  </view>
+</view>

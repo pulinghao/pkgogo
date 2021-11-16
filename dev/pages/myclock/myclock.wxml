@@ -1,0 +1,241 @@
+<!--pages/myclock/myclock.wxml   我得打卡历史记录-->
+<view class='body'>
+    <scroll-view scroll-y='true' class='swiper-box' bindscrolltolower="onScrollToLower">
+        <view class="body-container">
+                <block wx:if="{{resultList.length > 0}}">
+                    <block wx:for="{{resultList}}" wx:key="index" wx:for-item="dayItems">
+                        <view class="clock-body">
+                            <view class="clock-content-container">
+                                <view>
+                                    <view class="clock-userinfo-container">
+                                        <view class="clock-userinfo">
+                                            <image class="userinfo-img" src="{{dayItems.head}}"></image>
+                                            <view class="userinfo">
+                                                <text class="userinfo-name">{{dayItems.name}}</text>
+                                                <text class="clock-time">{{dayItems.date}}</text>
+                                            </view>
+                                        </view>
+                                        <view class="clock-contiDay">
+                                            <text class="clock-contiDay-text">打卡第</text>
+                                            <text class="clock-contiDay-count">{{dayItems.continueNum }}</text>
+                                            <text class="clock-contiDay-text">天</text>
+                                        </view>
+                                    </view>
+                                    <view class="content-container">
+                                        <navigator
+                                                url="../up_clock/detail?discussid={{dayItems.id}}&pageIndex=1&size={{size}}"
+                                                data-item='{{dayItems}}' hover-class='navigator-style'>
+                                            <text class="content-text">
+                                                {{dayItems.content }}
+                                            </text>
+                                        </navigator>
+                                        <block wx:if="{{dayItems.imgs.length>0}}">
+                                            <view class="img-container">
+                                                <block wx:for="{{dayItems.imgs}}" wx:key="index" wx:for-item="items">
+                                                    <view class="clock-img-bg" bindtap="previewImage"
+                                                          data-list="{{dayItems.imgs}}" data-src="{{items}}">
+                                                        <image class="clock-img" src="{{items}}"
+                                                               mode="aspectFill"></image>
+                                                    </view>
+                                                </block>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                                <view class="share-comment-like">
+                                    <view class="share-container">
+                                        <view class="share-container">
+                                            <button open-type="share" class="share-button"></button>
+                                            <image class="share-comment-like-Img" src="../../images/icon_share.png" mode="scaleToFill"></image>
+                                            <text class="shre-comment-like-text">分享</text>
+                                        </view>
+                                    </view>
+                                    <view class="comment-container" bindtap="goComment" data-index="{{dayItems.id}}"
+                                          data-item="{{dayItems.discussNum}}">
+                                        <image class="share-comment-like-img"
+                                               src="../../images/icon_comment_clock.png"></image>
+                                        <block wx:if="{{dayItems.discussNum>0}}">
+                                            <text class="shre-comment-like-text">{{dayItems.discussNum}}</text>
+                                        </block>
+                                        <block wx:else>
+                                            <text class="shre-comment-like-text">评论</text>
+                                        </block>
+                                    </view>
+                                    <view class="like-container">
+                                        <block wx:if="{{dayItems.isLike==false}}">
+                                            <image class="share-comment-like-img" src="../../images/icon_like_white.png"
+                                                   bindtap="goLike" data-index="{{dayItems.id}}"
+                                                   data-mark="{{dayItems.isLike}}"></image>
+                                        </block>
+                                        <block wx:if="{{dayItems.isLike==true}}">
+                                            <image class="share-comment-like-img" src="../../images/icon_like.png"
+                                                   bindtap="goLike" data-index="{{dayItems.id}}"
+                                                   data-mark="{{dayItems.isLike}}"></image>
+                                        </block>
+                                        <block wx:if="{{dayItems.likeNum>0}}">
+                                            <text class="shre-comment-like-text">{{dayItems.likeNum}}</text>
+                                        </block>
+                                        <block wx:else>
+                                            <text class="shre-comment-like-text">点赞</text>
+                                        </block>
+                                    </view>
+                                </view>
+                                <block wx:if="{{dayItems.discussList.length >0}}">
+                                    <view class="hot-comment">
+                                        <image class="hot-comment-icon" src="../../images/icon_hotcomment.png"></image>
+                                        <view class="hot-comment-content">
+                                            <text class="content-username">{{dayItems.discussList[0].name}}</text>
+                                            <text class="content-text"> {{dayItems.discussList[0].content}}</text>
+                                        </view>
+                                        <block wx:if="{{dayItems.discussList[0].imgs.length>0}}">
+                                            <view class="hot-comment-imgs">
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[0]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[0]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[1]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[1]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                                <view class="commnet-img-container" bindtap="previewImage"
+                                                      data-list="{{dayItems.discussList[0].imgs}}"
+                                                      data-src="{{dayItems.discussList[0].imgs[2]}}">
+                                                    <image class="comment-img" src="{{dayItems.discussList[0].imgs[2]}}"
+                                                           mode="aspectFill"></image>
+                                                </view>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="clock-blank"></view>
+                        </view>
+                    </block>
+                </block>
+                <block wx:else>
+                    <no-data title="去打卡"></no-data>
+                </block>
+        </view>
+    </scroll-view>
+</view>
+<!--<scroll-view scroll-y style="height:{{phoneHeight}}px;"  bindscrolltolower="onScrollToLower">
+    <block wx:if="{{resultList.length > 0}}">
+        <block wx:for="{{resultList}}" wx:key="index" wx:for-item="dayItems">
+            <view class="clock-blank"></view>
+            <view class="clock-body">
+                <view class="clock-content-container">
+                    <view>
+                        <view class="clock-userinfo-container">
+                            <view class="clock-userinfo">
+                                <image class="userinfo-img" src="{{dayItems.head}}"></image>
+                                <view class="userinfo">
+                                    <text class="userinfo-name">{{dayItems.name}}</text>
+                                    <text class="clock-time">{{dayItems.date}}</text>
+                                </view>
+                            </view>
+                            <view class="clock-contiDay">
+                                <text class="clock-contiDay-text">打卡第</text>
+                                <text class="clock-contiDay-count">{{dayItems.continueNum }}</text>
+                                <text class="clock-contiDay-text">天</text>
+                            </view>
+                        </view>
+                        <view class="content-container">
+                            <navigator url="../up_clock/detail?discussid={{dayItems.id}}&pageIndex=1&size={{size}}"
+                                       data-item='{{dayItems}}' hover-class='navigator-style'>
+                                <text class="content-text">
+                                    {{dayItems.content}}
+                                </text>
+                            </navigator>
+                            <block wx:if="{{dayItems.imgs.length>0}}">
+                                <view class="img-container">
+                                    <block wx:for="{{dayItems.imgs}}" wx:key="index" wx:for-item="items">
+                                        <view class="clock-img-bg" bindtap="previewImage" data-list="{{dayItems.imgs}}"
+                                              data-src="{{items}}">
+                                            <image class="clock-img" src="{{items}}" mode="aspectFill"></image>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="share-comment-like">
+                        <view class="share-container">
+                            <view class="share-container">
+                                <button open-type="share" class="share-button"></button>
+                                <image class="share-comment-like-img" src="../../images/icon_share.png"
+                                       mode="scaleToFill"></image>
+                                <text class="shre-comment-like-text">分享</text>
+                            </view>
+                        </view>
+                        <view class="comment-container" bindtap="goComment" data-index="{{dayItems.id}}"
+                              data-item="{{dayItems.discussNum}}">
+                            <image class="share-comment-like-img" src="../../images/icon_comment_clock.png"></image>
+                            <block wx:if="{{dayItems.discussNum>0}}">
+                                <text class="shre-comment-like-text">{{dayItems.discussNum}}</text>
+                            </block>
+                            <block wx:else>
+                                <text class="shre-comment-like-text">评论</text>
+                            </block>
+                        </view>
+                        <view class="like-container">
+                            <block wx:if="{{dayItems.isLike==false}}">
+                                <image class="share-comment-like-img" src="../../images/icon_like_white.png"
+                                       bindtap="goLike" data-index="{{dayItems.id}}"
+                                       data-mark="{{dayItems.isLike}}"></image>
+                            </block>
+                            <block wx:if="{{dayItems.isLike==true}}">
+                                <image class="share-comment-like-img" src="../../images/icon_like.png" bindtap="goLike"
+                                       data-index="{{dayItems.id}}" data-mark="{{dayItems.isLike}}"></image>
+                            </block>
+                            <block wx:if="{{dayItems.likeNum>0}}">
+                                <text class="shre-comment-like-text">{{dayItems.likeNum}}</text>
+                            </block>
+                            <block wx:else>
+                                <text class="shre-comment-like-text">点赞</text>
+                            </block>
+                        </view>
+                    </view>
+                    <block wx:if="{{dayItems.discussList.length >0}}">
+                        <view class="hot-comment">
+                            <image class="hot-comment-icon" src="../../images/icon_hotcomment.png"></image>
+                            <view class="hot-comment-content">
+                                <text class="content-username">{{dayItems.discussList[0].name}}</text>
+                                <text class="content-text"> {{dayItems.discussList[0].content}}</text>
+                            </view>
+                            <block wx:if="{{dayItems.discussList[0].imgs.length>0}}">
+                                <view class="hot-comment-imgs">
+                                    <view class="commnet-img-container" bindtap="previewImage"
+                                          data-list="{{dayItems.discussList[0].imgs}}"
+                                          data-src="{{dayItems.discussList[0].imgs[0]}}">
+                                        <image class="comment-img" src="{{dayItems.discussList[0].imgs[0]}}"
+                                               mode="aspectFill"></image>
+                                    </view>
+                                    <view class="commnet-img-container" bindtap="previewImage"
+                                          data-list="{{dayItems.discussList[0].imgs}}"
+                                          data-src="{{dayItems.discussList[0].imgs[1]}}">
+                                        <image class="comment-img" src="{{dayItems.discussList[0].imgs[1]}}"
+                                               mode="aspectFill"></image>
+                                    </view>
+                                    <view class="commnet-img-container" bindtap="previewImage"
+                                          data-list="{{dayItems.discussList[0].imgs}}"
+                                          data-src="{{dayItems.discussList[0].imgs[2]}}">
+                                        <image class="comment-img" src="{{dayItems.discussList[0].imgs[2]}}"
+                                               mode="aspectFill"></image>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </block>
+    <block wx:else>
+        <no-data title="去打卡"></no-data>
+    </block>
+    <view class="blank"></view>
+</scroll-view>-->

@@ -1,0 +1,39 @@
+<!-- redemption.wxml 积分换购详情页 -->
+<view class='body'>
+    <view class="product-container">
+        <text class="product-container-detail">
+            {{remark}}
+        </text>
+    </view>
+    <form class="user-info" bindsubmit="confirmRedemption">
+        <view class="user-info-input">
+            <view class="info-container">
+                <text class="info-label">手机号：</text>
+                <input id="phone-number" class="info-content" type="number" name='phoneNumber'/>
+            </view>
+            <view class="info-container">
+                <text class="info-label">微信号：</text>
+                <input id="wechat-id" class="info-content" name='wechatId' />
+            </view>
+            <view class="info-container">
+                <text class="info-label">收货地址：</text>
+                <input id="address" class="info-content" name='address' />
+            </view>
+            <view class="info-container">
+                <text class="info-label">收货电话：</text>
+                <input id="receive-phone-num" class="info-content" type="number" name='receivePhoneNumber' />
+            </view>
+        </view>
+        <view>
+            <button id="submit-btn" form-type="submit">确认换购</button>
+        </view>
+    </form>
+    <view class="qpk-modal-mask" hidden="{{isModalHide}}">
+      <view class="qpk-modal" id="confirm-info">
+        <text class="qpk-modal-title">已收到你的信息</text>
+        <text class="qpk-modal-content">请确保手机畅通
+          我们将在24小时内联系你</text>
+        <view id="qpk-modal-confirm-btn" bindtap='modalConfirm'>确认</view>
+      </view>
+    </view>
+</view>

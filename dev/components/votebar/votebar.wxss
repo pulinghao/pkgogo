@@ -1,0 +1,92 @@
+/* components/votebar/votebar.wxss */
+
+.votebar {
+  width: 688rpx;
+  height: 196rpx;
+  background: rgba(1, 70, 191, 1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.choose-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.left-choice {
+  width: 306rpx;
+  height: 108rpx;
+  background: linear-gradient(180deg, rgba(43, 162, 255, 1) 0%, rgba(0, 118, 255, 1) 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-choice-bg {
+  width: 306rpx;
+  height: 108rpx;
+  background: rgba(0, 62, 171, 1);
+  border-radius: 12px;
+}
+
+.left-text {
+  font-size: 15px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.right-choice {
+  width: 306rpx;
+  height: 108rpx;
+  background: linear-gradient(360deg, rgba(255, 0, 60, 1) 0%, rgba(255, 23, 126, 1) 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-text {
+  font-size: 15px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.right-choice-bg {
+  width: 306rpx;
+  height: 108rpx;
+  background: rgba(176, 39, 83, 1);
+  border-radius: 12px;
+}
+
+.voted-part {
+  width: 100%;
+}
+
+.voted-text-part {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.voted-text {
+  font-size: 16px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,488 @@
+/* pages/game/detail.wxss */
+
+.item-layout {
+  background-color: #2b2c3a;
+  /* height: 360rpx; */
+  border-radius: 12rpx;
+  /* padding: 22rpx 30rpx 16rpx 24rpx; */
+  margin-top: 30rpx;
+  margin-left: 26rpx;
+  margin-right: 24rpx;
+}
+
+.item-layout .item-head {
+  height: 154rpx;
+}
+
+.item-layout .item-head .share-view {
+  position: absolute;
+  right: 40rpx;
+  top:45rpx;
+  height: 27px;
+  background: rgba(111, 110, 255, 1);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  font-size:12px;
+  font-family:PingFangSC-Semibold;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:27px;
+}
+
+.item-layout image {
+  top: 0;
+  width: 100%;
+  height: 154rpx;
+}
+
+.item-layout .item-body {
+  margin-top: 12rpx;
+  margin-left: 12rpx;
+}
+
+.item-body .first-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-body .first-line .left {
+  width: 50%;
+}
+
+.item-body .first-line .right {
+  width: 50%;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.item-body .first-line .right .pingfen {
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 100%;
+}
+
+.item-body .second-line {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20rpx;
+}
+
+.item-body .second-line .left {
+  width: 50%;
+}
+
+.item-body .second-line .right {
+  width: 50%;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.item-body .second-line .right .number {
+  font-size: 30px;
+  font-family: SourceSansPro-Semibold;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 10px;
+}
+
+.item-layout .title {
+  font-size: 32rpx;
+  color: #fff;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.second-line .left .answer {
+  font-size: 28rpx;
+  height: 80rpx;
+  margin-top: 0rpx;
+  color: rgba(255, 255, 255, 1);
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: flex-end;
+}
+
+.item-layout .item-tail {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item-tail .award-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.award-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 10px;
+}
+
+.award-num {
+  font-size: 13px;
+  font-family: SourceSansPro-Semibold;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 10px;
+  margin-left: 8rpx;
+}
+
+.item-tail .award-icon {
+  width: 68rpx;
+  height: 76rpx;
+}
+
+.item-tail .people-icon {
+  width: 76rpx;
+  height: 76rpx;
+}
+
+.item-tail .people-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 8rpx;
+}
+
+.people-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 10px;
+  margin-left: 8rpx;
+}
+
+.people-num {
+  font-size: 13px;
+  font-family: SourceSansPro-Semibold;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 10px;
+}
+
+.body {
+  border-radius: 12rpx;
+  border-color: #4c4d59;
+  border-width: 5rpx;
+  border-style: solid;
+  margin-top: 30rpx;
+  margin-left: 26rpx;
+  margin-right: 24rpx;
+  padding-bottom: 15rpx;
+}
+
+.body .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.body .title .award-icon {
+  width: 68rpx;
+  height: 76rpx;
+}
+
+.body .title .guize {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(65, 65, 65, 1);
+  line-height: 12px;
+}
+
+.body .subtitle {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.body .subtitle .zhengwen {
+  font-size: 14px;
+  color: rgba(62, 62, 62, 1);
+}
+
+.body .instructions {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.body .instructions .xiaoguize {
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(62, 62, 62, 1);
+  line-height: 18px;
+}
+
+.result {
+  border-radius: 12rpx;
+  border-color: #4c4d59;
+  border-width: 5rpx;
+  border-style: solid;
+  margin-top: 30rpx;
+  margin-left: 26rpx;
+  margin-right: 24rpx;
+  padding-bottom: 15rpx;
+}
+
+.result .title {
+  margin-left: 30rpx;
+}
+
+.result .title .saiguo {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(65, 65, 65, 1);
+  line-height: 12px;
+}
+
+.result .color-bar {
+  display: flex;
+  flex-direction: row;
+  height: 34rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-top: 10rpx;
+}
+
+.result .color-bar .left-color-bar {
+  background: rgba(255, 0, 60, 1);
+  height: 100%;
+  border-top-left-radius: 17rpx;
+  border-bottom-left-radius: 17rpx;
+}
+
+.result .color-bar .right-color-bar {
+  background: rgba(0, 118, 255, 1);
+  height: 100%;
+  border-top-right-radius: 17rpx;
+  border-bottom-right-radius: 17rpx;
+}
+
+.result .rate-text {
+  display: flex;
+  flex-direction: row;
+  height: 36rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-top: 10rpx;
+}
+
+.result .rate-text .left-rate-text {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(62, 62, 62, 1);
+  line-height: 18px;
+}
+
+.result .rate-text .right-rate-text {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(62, 62, 62, 1);
+  line-height: 18px;
+  text-align: right;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabbar .left-bar {
+  width: 50%;
+  height: 100%;
+  background: #e9e9e9;
+}
+
+.tabbar .right-bar {
+  width: 50%;
+  height: 100%;
+}
+
+.text-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.text-bar .top-line {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(76, 77, 89, 1);
+  line-height: 12px;
+}
+
+.text-bar .bottom-line {
+  margin-top: 16rpx;
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(76, 77, 89, 1);
+  line-height: 12px;
+}
+
+.tabbar .right-bar {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.right-bar .right-bar-text {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* 蒙层 */
+
+.zhezao {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.t_w {
+  position: relative;
+}
+
+.tanchu_view {
+  width: 80%;
+  margin: 25% auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 4rpx;
+}
+
+.tanchu_view .title {
+  margin: 30rpx auto 30rpx auto;
+  color: rgba(65, 65, 65, 1);
+  font-size: 35rpx;
+  padding: 0rpx 30rpx;
+  text-align: center;
+}
+
+.tanchu_view .subtitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.tanchu_view .subtitle .left {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(65, 65, 65, 1);
+  margin-left: 30rpx;
+}
+
+.tanchu_view .subtitle .right {
+  width: 50%;
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(65, 65, 65, 1);
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.tanchu_view .main {
+  border-radius: 12rpx;
+  border-color: #dadada;
+  border-width: 5rpx;
+  border-style: solid;
+  margin-top: 30rpx;
+  margin-left: 26rpx;
+  margin-right: 24rpx;
+  padding-bottom: 15rpx;
+}
+
+.tanchu_view .main .instructions {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.tanchu_view .main .xiaoguize {
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(62, 62, 62, 1);
+  line-height: 18px;
+}
+
+.tanchu_view .btn-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+
+.tanchu_view .btn-area .left {
+  width: 120px;
+  height: 35px;
+  background: rgba(171, 171, 171, 1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 15rpx;
+  color: #fff;
+}
+
+.tanchu_view .btn-area .right {
+  width: 120px;
+  height: 35px;
+  background: rgba(255, 0, 60, 1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15rpx;
+  color: #fff;
+}

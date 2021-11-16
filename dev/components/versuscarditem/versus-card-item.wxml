@@ -1,0 +1,40 @@
+<view class="versus-card-item">
+  <view class="versus-title-container">
+    <image class="versus-title-bg" src="{{imgUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+    <title class="versus-title">{{title}}</title>
+  </view>
+  <title wx:if="{{!seal && !settle && !end}}" class="versus-description">{{remark}}</title>
+  <title wx:elif="{{seal && !settle}}" class="seal-description">已封盘，请等待结果</title>
+  <title wx:elif="{{settle && isVoted}}" class="versus-description">{{userOption == result ? '胜出！瓜分PK币 +' +  divideMoney : '败北！损失PK币 -' + divideMoney}}</title>
+  <title wx:else class="versus-description">PK已结束</title>
+  <block wx:if="{{!isVoted && !seal}}">
+    <to-vote-view class="to-vote-view" left-text="{{leftText}}" right-text="{{rightText}}"></to-vote-view>
+  </block>
+  <block wx:else>
+    <voted-view class="voted-view" left-text="{{leftText}}" 
+      left-percent="{{leftPercent}}" 
+      left-num="{{leftNum}}" 
+      right-text="{{rightText}}"
+      right-percent="{{rightPercent}}" 
+      right-num="{{rightNum}}"
+      user-option="{{userOption}}"
+      left-total="{{leftNum * payMoney}}"
+      right-total="{{rightNum * payMoney}}"
+      result="{{result}}"
+      seal="{{seal}}"
+      settle="{{settle}}"
+      end="{{end}}"></voted-view>
+  </block>
+  <view class="footer">
+    <view class="participation-container">
+      <image class="participation-icon" src="/components/versuscarditem/images/participation-icon.png" mode="aspectFit|aspectFill|widthFix"></image>
+      <view class="participation-numbers">{{joinNum}}</view>
+      <image class="participation-up" src="/components/versuscarditem/images/up-icon.png" mode="aspectFit|aspectFill|widthFix"></image>
+      <view class="paricipation-end">人参与</view>
+    </view>
+    <view class="money-per-time">
+      {{payMoney}}PK币/次
+    </view>
+      
+  </view>
+</view>
